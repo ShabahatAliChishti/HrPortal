@@ -1,0 +1,1828 @@
+﻿@model HrProperty.Models.EmployeeProperty
+
+@{
+    ViewBag.Title = "Add Employee";
+}
+
+
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Employee Form</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Employee Form</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+@{ 
+    if (ViewBag.Employee == null)
+    {
+
+
+<section class="content">
+    <div class="container-fluid">
+        <form id="employeeform">
+            @*first row*@
+          
+            <div class="row">
+                <!-- left column -->
+                <!--/.col (left) -->
+                <!-- right column -->
+                <div class="col-md-6">
+                    <!-- general form elements disabled -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Employee Basic Info</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <div>
+                                            <img height="100px" id="profilepicture" width="100px" src="https://profiles.utdallas.edu/img/default.png" />
+                                        </div>
+                                        <label>Profile Photo</label>
+                                        @Html.TextBoxFor(m => m.ImageFile, new { htmlAttributes = new { @placeholder = "Select File JPG/JPEG only", @class = "form-control" }, type = "file" })
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Employee ID</label>
+                                        @Html.EditorFor(model => model.Employee_ID, new { htmlAttributes = new { @placeholder = "Employee ID", @class = "form-control", @id = "txtboxempployee_id", @disabled = true } })
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Employee Name</label>
+                                        @Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @placeholder = "Employee Name", @class = "form-control", @id = "txtboxempname" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.EmpName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Govt. Issued Id No</label>
+                                        @Html.EditorFor(model => model.GovtId, new { htmlAttributes = new { @placeholder = "Govt Issued Number", @class = "form-control", @id = "txtboxgovtissuenumb" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.GovtId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>SSN No</label>
+                                        @Html.EditorFor(model => model.SSNno, new { htmlAttributes = new { @placeholder = "SSN No", @class = "form-control", @id = "txtboxssnnumb" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.SSNno, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Driving License No</label>
+                                        @Html.EditorFor(model => model.LicenseNo, new { htmlAttributes = new { @placeholder = "License No", @class = "form-control", @id = "txtboxdrivingnumb" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LicenseNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+
+                                    <div class="form-group">
+                                        <label>Emergency Contact No</label>
+                                        @Html.EditorFor(model => model.EmergencyPersonContact, new { htmlAttributes = new { @placeholder = "Emergency Contact No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.EmergencyPersonContact, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- textarea -->
+                                    <div class="form-group">
+                                        <label>Present Residential Address</label>
+                                        @Html.TextAreaFor(model => model.HomeAddress, new { @placeholder = "Present Residential Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.HomeAddress, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Emergency Contact Person Name</label>
+                                        @Html.EditorFor(model => model.EmergencyPersonName, new { htmlAttributes = new { @placeholder = "Emergency Contact Person Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.EmergencyPersonName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Person Contact No</label>
+                                        @Html.EditorFor(model => model.HomeContact, new { htmlAttributes = new { @placeholder = "Contact No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.HomeContact, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+
+
+
+                            
+                            <div class="row">
+                                
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Attendance Id</label>
+                                        @Html.EditorFor(model => model.Attndnc_id, new { htmlAttributes = new { @placeholder = "Attendance Id", @class = "form-control", @id = "txtboxattndnc" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Attndnc_id, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Date of Joining</label>
+                                        @Html.EditorFor(model => model.JoiningDate, new { htmlAttributes = new { @placeholder = "Joining Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Salary Info</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Casual Leaves</label>
+                                        @Html.EditorFor(model => model.Casual_Leaves, new { htmlAttributes = new { @placeholder = "Casual Leave", @class = "form-control", @id = "txtboxcasualleave" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.BaseSalary, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Annual Leaves</label>
+                                        @Html.EditorFor(model => model.Annual_Leaves, new { htmlAttributes = new { @placeholder = "Annual", @class = "form-control", @id = "txtboxanualleave" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LeaveBalances, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Base Salary</label>
+                                        @Html.EditorFor(model => model.BaseSalary, new { htmlAttributes = new { @placeholder = "Base Salary", @class = "form-control", @id = "txtboxbasesalary" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.BaseSalary, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Leave Balances</label>
+                                        @Html.EditorFor(model => model.LeaveBalances, new { htmlAttributes = new { @placeholder = "Leave Balances", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LeaveBalances, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Meal Allowances</label>
+                                        @Html.EditorFor(model => model.Allownce1, new { htmlAttributes = new { @placeholder = "Meal Allowance", @class = "form-control", @id = "txtboxalownce1" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Allownce1, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Insurance</label>
+                                        @Html.EditorFor(model => model.Allownce2, new { htmlAttributes = new { @placeholder = "Insurance", @class = "form-control", @id = "txtboxalownce2" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Allownce2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Medical limit/month</label>
+                                        @Html.EditorFor(model => model.Allownce3, new { htmlAttributes = new { @placeholder = "Medical limit/month", @class = "form-control", @id = "txtboxalownce3" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Allownce3, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Total Salary</label>
+                                        @Html.EditorFor(model => model.TotalSalary, new { htmlAttributes = new { @placeholder = "Total Salary", @class = "form-control", @id = "txtboxtotalsalary" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.TotalSalary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Gratuity</label>
+                                        @Html.EditorFor(model => model.Benefit1, new { htmlAttributes = new { @placeholder = "Gratuity", @class = "form-control", @id = "txtboxbenefit1" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Benefit1, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Benefit 2</label>
+                                        @Html.EditorFor(model => model.Benefit2, new { htmlAttributes = new { @placeholder = "Benefit 2", @class = "form-control", @id = "txtboxbenefit2" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Benefit2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Bank Account No</label>
+                                        @Html.EditorFor(model => model.BankAccountNo, new { htmlAttributes = new { @placeholder = "Bank Account No", @class = "form-control", @id = "txtboxbankaccount" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.BankAccountNo, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Total Package</label>
+                                        @Html.EditorFor(model => model.Total_Package, new { htmlAttributes = new { @placeholder = "Total Package", @class = "form-control", @id = "txtboxtotalpkg" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Total_Package, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /first.row end-->
+            <div style="display:none;">
+                @*Seconf row*@
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+
+                    <div class="col-md-6">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">Organizational Info</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Designation</label>
+                                            @Html.DropDownListFor(model => model.Designation_Id, new SelectList(ViewBag.DesignationlistItems as List<HrProperty.Models.Designation_Property>, "Designation_Id", "Designation"), "Select Designation", new { @Class = "form-control font-weight-bold" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Designation_Id, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Department</label>
+                                            @Html.DropDownListFor(model => model.Department_id, new SelectList(ViewBag.DepartmentlistItems as List<HrProperty.Models.Department_Property>, "Department_Id", "DepartmentName"), "Select Department", new { @Class = "form-control font-weight-bold" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Department_id, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <!-- textarea -->
+                                        <div class="form-group">
+                                            <label>Employee Type</label>
+                                            @Html.DropDownListFor(model => model.EmpType_Id, new SelectList(ViewBag.EmpTypelistItems as List<HrProperty.Models.EmployeeTypeProperty>, "EmployeeTypeID", "EmployeeType"), "Select Employee Type", new { @Class = "form-control font-weight-bold" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.EmpType_Id, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <!-- textarea -->
+                                        <div class="form-group">
+                                            <label>Deputation Location</label>
+                                            @Html.EditorFor(model => model.DeputationLoc, new { htmlAttributes = new { @placeholder = "Deputation Location", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.DeputationLoc, "", new { @class = "text-danger" })
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-gray">
+                            <div class="card-header">
+                                <h3 class="card-title">Others Info</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Blood Group</label>
+                                            @Html.EditorFor(model => model.BloodGroup, new { htmlAttributes = new { @placeholder = "Blood Group", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.BloodGroup, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Mode Of Traveling</label>
+                                            @Html.EditorFor(model => model.ModeOfTraveling, new { htmlAttributes = new { @placeholder = "Mode Of Traveling", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.ModeOfTraveling, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Vehicle No</label>
+                                            @Html.EditorFor(model => model.VehicleNo, new { htmlAttributes = new { @placeholder = "Vehicle No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.VehicleNo, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Reference Check</label>
+                                            @Html.DropDownListFor(model => model.Reference_id, new List<SelectListItem>
+                        {
+
+                        new SelectListItem() {Text = "Yes", Value="1"},
+                        new SelectListItem() {Text = "No", Value="0"}
+                        },
+new { @Class = "form-control font-weight-bold" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Reference_id, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+
+                @*second row end*@
+
+
+
+                @*third Row*@
+
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+
+                    <div class="col-md-6">
+                        <div class="card card-light">
+                            <div class="card-header">
+                                <h3 class="card-title">Education</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Education</label>
+                                            @Html.DropDownListFor(model => model.LastEdu_Id, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Bachelor's", Value="1"},
+                        new SelectListItem() {Text = "Master's", Value="2"},
+                        new SelectListItem() {Text = "Other", Value="3"}
+                        },
+new { @Class = "form-control font-weight-bold" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEdu_Id, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Education Completion Date</label>
+                                            @Html.EditorFor(model => model.LastEducationDate, new { htmlAttributes = new { @placeholder = "Last Education Completion Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEducationDate, "", new { @class = "text-danger" })
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Education Completion Institute</label>
+                                            @Html.EditorFor(model => model.LastInstitueName, new { htmlAttributes = new { @placeholder = "Last Institue Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card card-olive">
+                            <div class="card-header">
+                                <h3 class="card-title">Last Employee Details</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Last Employer Name</label>
+                                            @Html.EditorFor(model => model.LastEmployerName, new { htmlAttributes = new { @placeholder = "Last Employer Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEmployerName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Employer Contact</label>
+                                            @Html.EditorFor(model => model.LastEmployerContact, new { htmlAttributes = new { @placeholder = "Last Employer Contact", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEmployerContact, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Employer From Date</label>
+                                            @Html.EditorFor(model => model.LastEmployerFromDate, new { htmlAttributes = new { @placeholder = "Last Employer From Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEmployerFromDate, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Employer To Date</label>
+                                            @Html.EditorFor(model => model.LastEmployerToDate, new { htmlAttributes = new { @placeholder = "Last Employer To Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEmployerToDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <!-- textarea -->
+                                        <div class="form-group">
+                                            <label>Last Employer Address</label>
+                                            @Html.TextAreaFor(model => model.LastEmployerAdd, new { @placeholder = "Last Employer Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEmployerAdd, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                @*third row end*@
+
+                @*Fourth Row*@
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+
+                    <div class="col-md-6">
+                        <div class="card card-light">
+                            <div class="card-header">
+                                <h3 class="card-title">Depandants</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Dependant Name</label>
+                                            @Html.DropDownListFor(model => model.LastEdu_Id, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Bachelor's", Value="1"},
+                        new SelectListItem() {Text = "Master's", Value="2"},
+                        new SelectListItem() {Text = "Other", Value="3"}
+                        },
+new { @Class = "form-control font-weight-bold" })
+
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEdu_Id, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>RelationShip</label>
+                                            @Html.EditorFor(model => model.LastEducationDate, new { htmlAttributes = new { @placeholder = "Last Education Completion Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.LastEducationDate, "", new { @class = "text-danger" })
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date Of Birth</label>
+                                            @Html.EditorFor(model => model.LastInstitueName, new { htmlAttributes = new { @placeholder = "Last Institue Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+
+                    <!--/.col (right) -->
+                </div>
+
+                
+
+                
+            </div>
+            @*Forth Row End*@
+            <div class="row">
+                @Html.HiddenFor(model => model.Id, new { id = "natureOfVisitField", value = 0 })
+
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label></label>
+                        <input type="button" id="btnaddemployee" class="form-control btn btn-primary" value="Add Employee">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div><!-- /.container-fluid -->
+</section>
+
+    }
+    else
+    {
+
+        <section class="content">
+            <div class="container-fluid">
+                <form id="employeeform">
+                    @*first row*@
+
+                    <div class="row">
+                        <!-- left column -->
+                        <!--/.col (left) -->
+                        <!-- right column -->
+                        <div class="col-md-6">
+                            <!-- general form elements disabled -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Employee Basic Info</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+
+
+                                    @{
+                                        if (Model.ImgPath != "")
+                                        {
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <!-- text input -->
+                                                    <div class="form-group">
+                                                        <div>
+                                                            <img height="100px" id="profilepicture" width="100px" src=@Url.Content(Model.ImgPath) />
+                                                        </div>
+                                                        <label>Profile Photo</label>
+                                                        @Html.TextBoxFor(m => m.ImageFile, new { htmlAttributes = new { @placeholder = "Select File JPG/JPEG only", @class = "form-control" }, type = "file" })
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <!-- text input -->
+                                                    <div class="form-group">
+                                                        <div>
+                                                            <img height="100px" id="profilepicture" width="100px" src="https://profiles.utdallas.edu/img/default.png" />
+                                                        </div>
+                                                        <label>Profile Photo</label>
+                                                        @Html.TextBoxFor(m => m.ImageFile, new { htmlAttributes = new { @placeholder = "Select File JPG/JPEG only", @class = "form-control" }, type = "file" })
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        }
+
+                                    }
+
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Employee ID</label>
+                                                @Html.EditorFor(model => model.Employee_ID, new { htmlAttributes = new { @placeholder = "Employee ID", @class = "form-control", @id = "txtboxempployee_id", @disabled = true } })
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Employee Name</label>
+                                                @Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { @placeholder = "Employee Name", @class = "form-control", @id = "txtboxempname" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.EmpName, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Govt. Issued Id No</label>
+                                                @Html.EditorFor(model => model.GovtId, new { htmlAttributes = new { @placeholder = "Govt Issued Number", @class = "form-control", @id = "txtboxgovtissuenumb" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.GovtId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>SSN No</label>
+                                                @Html.EditorFor(model => model.SSNno, new { htmlAttributes = new { @placeholder = "SSN No", @class = "form-control", @id = "txtboxssnnumb" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.SSNno, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Driving License No</label>
+                                                @Html.EditorFor(model => model.LicenseNo, new { htmlAttributes = new { @placeholder = "License No", @class = "form-control", @id = "txtboxdrivingnumb" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LicenseNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+
+
+                                            <div class="form-group">
+                                                <label>Emergency Contact No</label>
+                                                @Html.EditorFor(model => model.EmergencyPersonContact, new { htmlAttributes = new { @placeholder = "Emergency Contact No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.EmergencyPersonContact, "", new { @class = "text-danger" })
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Present Residential Address</label>
+                                                @Html.TextAreaFor(model => model.HomeAddress, new { @placeholder = "Present Residential Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.HomeAddress, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Emergency Contact Person Name</label>
+                                                @Html.EditorFor(model => model.EmergencyPersonName, new { htmlAttributes = new { @placeholder = "Emergency Contact Person Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.EmergencyPersonName, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Person Contact No</label>
+                                                @Html.EditorFor(model => model.HomeContact, new { htmlAttributes = new { @placeholder = "Contact No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.HomeContact, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Attendance Id</label>
+                                                @Html.EditorFor(model => model.Attndnc_id, new { htmlAttributes = new { @placeholder = "Attendance Id", @class = "form-control", @id = "txtboxattndnc" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Attndnc_id, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Date of Joining</label>
+                                                @Html.EditorFor(model => model.JoiningDate, new { htmlAttributes = new { @placeholder = "Joining Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Salary Info</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Casual Leaves</label>
+                                                @Html.EditorFor(model => model.Casual_Leaves, new { htmlAttributes = new { @placeholder = "Casual Leave", @class = "form-control", @id = "txtboxcasualleave" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Casual_Leaves, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Annual Leaves</label>
+                                                @Html.EditorFor(model => model.Annual_Leaves, new { htmlAttributes = new { @placeholder = "Annual", @class = "form-control", @id = "txtboxanualleave" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Annual_Leaves, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Base Salary</label>
+                                                @Html.EditorFor(model => model.BaseSalary, new { htmlAttributes = new { @placeholder = "Base Salary", @class = "form-control", @id = "txtboxbasesalary" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.BaseSalary, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Leave Balances</label>
+                                                @Html.EditorFor(model => model.LeaveBalances, new { htmlAttributes = new { @placeholder = "Leave Balances", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LeaveBalances, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Meal Allowances</label>
+                                                @Html.EditorFor(model => model.Allownce1, new { htmlAttributes = new { @placeholder = "Meal Allowances", @class = "form-control", @id = "txtboxalownce1" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Allownce1, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Insurance</label>
+                                                @Html.EditorFor(model => model.Allownce2, new { htmlAttributes = new { @placeholder = "Insurance", @class = "form-control", @id = "txtboxalownce2" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Allownce2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Medical limit/month</label>
+                                                @Html.EditorFor(model => model.Allownce3, new { htmlAttributes = new { @placeholder = " Medical limit/month", @class = "form-control", @id = "txtboxalownce3" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Allownce3, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Total Salary</label>
+                                                @Html.EditorFor(model => model.TotalSalary, new { htmlAttributes = new { @placeholder = "Total Salary", @class = "form-control", @id = "txtboxtotalsalary" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.TotalSalary, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Gratuity</label>
+                                                @Html.EditorFor(model => model.Benefit1, new { htmlAttributes = new { @placeholder = "Gratuity", @class = "form-control", @id = "txtboxbenefit1" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Benefit1, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Benefit 2</label>
+                                                @Html.EditorFor(model => model.Benefit2, new { htmlAttributes = new { @placeholder = "Benefit 2", @class = "form-control", @id = "txtboxbenefit2" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Benefit2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Bank Account No</label>
+                                                @Html.EditorFor(model => model.BankAccountNo, new { htmlAttributes = new { @placeholder = "Bank Account No", @class = "form-control", @id = "txtboxbankaccount" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.BankAccountNo, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Total Package</label>
+                                                @Html.EditorFor(model => model.Total_Package, new { htmlAttributes = new { @placeholder = "Total Package", @class = "form-control", @id = "txtboxtotalpkg" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Total_Package, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (right) -->
+                    </div>
+                    <!-- /first.row end-->
+                    @*Seconf row*@
+                    <div class="row">
+                        <!-- left column -->
+                        <!--/.col (left) -->
+                        <!-- right column -->
+
+                        <div class="col-md-6">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Organizational Info</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Designation</label>
+                                                @Html.DropDownListFor(model => model.Designation_Id, new SelectList(ViewBag.DesignationlistItems as List<HrProperty.Models.Designation_Property>, "Designation_Id", "Designation"), "Select Designation", new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Designation_Id, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Department</label>
+                                                @Html.DropDownListFor(model => model.Department_id, new SelectList(ViewBag.DepartmentlistItems as List<HrProperty.Models.Department_Property>, "Department_Id", "DepartmentName"), "Select Department", new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Department_id, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Employee Type</label>
+                                                @Html.DropDownListFor(model => model.EmpType_Id, new SelectList(ViewBag.EmpTypelistItems as List<HrProperty.Models.EmployeeTypeProperty>, "EmployeeTypeID", "EmployeeType"), "Select Employee Type", new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.EmpType_Id, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Deputation Location</label>
+                                                @Html.DropDownListFor(model => model.DeputationLoc, new SelectList(ViewBag.DeputationLocation as List<HrProperty.Models.Deputation_Property>, "Id", "Deputation_Location"), "Select Deputation Location", new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.DeputationLoc, "", new { @class = "text-danger" })
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card card-gray">
+                                <div class="card-header">
+                                    <h3 class="card-title">Others Info</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Blood Group</label>
+                                                @Html.EditorFor(model => model.BloodGroup, new { htmlAttributes = new { @placeholder = "Blood Group", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.BloodGroup, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Mode Of Traveling</label>
+                                                @Html.EditorFor(model => model.ModeOfTraveling, new { htmlAttributes = new { @placeholder = "Mode Of Traveling", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.ModeOfTraveling, "", new { @class = "text-danger" })
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Vehicle No</label>
+                                                @Html.EditorFor(model => model.VehicleNo, new { htmlAttributes = new { @placeholder = "Vehicle No", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.VehicleNo, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Reference Check</label>
+                                                @Html.DropDownListFor(model => model.Reference_id, new List<SelectListItem>
+                        {
+
+                        new SelectListItem() {Text = "Yes", Value="1"},
+                        new SelectListItem() {Text = "No", Value="0"}
+                        },
+     new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Reference_id, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (right) -->
+                    </div>
+
+                    @*second row end*@
+
+
+
+                    @*third Row*@
+
+                    <div class="row">
+                        <!-- left column -->
+                        <!--/.col (left) -->
+                        <!-- right column -->
+
+                        <div class="col-md-6">
+                            <div class="card card-light">
+                                <div class="card-header">
+                                    <h3 class="card-title">Education</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Education</label>
+                                                @Html.DropDownListFor(model => model.LastEdu_Id, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Bachelor's", Value="1"},
+                        new SelectListItem() {Text = "Master's", Value="2"},
+                        new SelectListItem() {Text = "Other", Value="3"}
+                        },
+     new { @Class = "form-control font-weight-bold" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEdu_Id, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Education Completion Date</label>
+                                                @Html.EditorFor(model => model.LastEducationDate, new { htmlAttributes = new { @placeholder = "Last Education Completion Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEducationDate, "", new { @class = "text-danger" })
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Education Completion Institute</label>
+                                                @Html.EditorFor(model => model.LastInstitueName, new { htmlAttributes = new { @placeholder = "Last Institue Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card card-olive">
+                                <div class="card-header">
+                                    <h3 class="card-title">Last Employee Details</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Last Employer Name</label>
+                                                @Html.EditorFor(model => model.LastEmployerName, new { htmlAttributes = new { @placeholder = "Last Employer Name", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEmployerName, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Employer Contact</label>
+                                                @Html.EditorFor(model => model.LastEmployerContact, new { htmlAttributes = new { @placeholder = "Last Employer Contact", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEmployerContact, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Employer From Date</label>
+                                                @Html.EditorFor(model => model.LastEmployerFromDate, new { htmlAttributes = new { @placeholder = "Last Employer From Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEmployerFromDate, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Last Employer To Date</label>
+                                                @Html.EditorFor(model => model.LastEmployerToDate, new { htmlAttributes = new { @placeholder = "Last Employer To Date", @class = "form-control", @id = "txtboxjoiningdate" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEmployerToDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- textarea -->
+                                            <div class="form-group">
+                                                <label>Last Employer Address</label>
+                                                @Html.TextAreaFor(model => model.LastEmployerAdd, new { @placeholder = "Last Employer Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastEmployerAdd, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (right) -->
+                    </div>
+                    @*third row end*@
+
+                    @*Fourth Row*@
+                    <div class="row">
+                        <!-- left column -->
+                        <!--/.col (left) -->
+                        <!-- right column -->
+
+                        <div class="col-md-6">
+                            <div class="card card-light">
+                                <div class="card-header">
+                                    <h3 class="card-title">Depandants</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label>Dependant</label>
+                                                    <input type="text" id="depname" placeholder="Depandent name" class="form-control"/>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label>RelationShip</label>
+                                                <input type="text" id="relationship" placeholder="RelationShip" class="form-control" />
+                                        </div>
+                                           
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>DOB</label>
+                                                <input type="date" id="dob" placeholder="RelationShip" class="form-control" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label>Medical</label>
+                                                <select id="mdcl" class="form-control">
+                                                    <option value="1">
+                                                        Yes
+                                                    </option>
+                                                    <option value="0">
+                                                        No
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>N.I.C</label>
+                                                <input type="text" id="nic" placeholder="N.i.c" class="form-control" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                
+                                                <input type="button" id="btnaddtogrid" value="Add To Grid" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Relation</th>
+                                                <th>DOB</th>
+                                                <th>Medical</th>
+                                                <th>NIC</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+
+
+                        <!--/.col (right) -->
+                    </div>
+
+                    @*Forth Row End*@
+
+                    @if (Model.EmployeeLogin)
+                    {
+
+                    }
+                    else
+                    {
+                        <div class="row">
+                            @Html.HiddenFor(model => model.Id, new { id = "natureOfVisitField" })
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label></label>
+                                    <input type="button" id="btnaddemployee" class="form-control btn btn-primary" value="Update Employee">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                </form>
+            </div><!-- /.container-fluid -->
+        </section>
+
+
+                                            }
+
+                          }
+@section MyScripts {
+<script type="text/javascript">
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profilepicture').attr('src', e.target.result);
+              //  $('#picture').css('background-image', 'url(' +  e.target.result + ')');
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    var fileinput = document.getElementById("ImageFile");
+    $("#ImageFile").change(function () {
+        var fileinput = document.getElementById("ImageFile");
+        console.log("file uploaded")
+        for (var i = 0; i < fileinput.files.length; i++) {
+            if (fileinput.files[i].type != "image/jpeg") {
+                //swal({
+                //    title: "Warning!",
+                //    text: "Please insert Only Image files",
+                //    type: "error"
+                //});
+                alert("Please Upload Only jpeg image");
+                $("#ImageFile").val('');
+            }
+            else {
+
+
+                readURL(this);
+            }
+        }
+    });
+
+
+
+    $(document).ready(function () {
+
+       
+
+        var checkupdate = $('#natureOfVisitField').val();
+        if(checkupdate!=0){
+            $.ajax({
+                url: "/Employee/GetEmployeesDepandants?id="+checkupdate,
+                success: function (data) {
+                bindCustomersInDataTable(data);
+                }
+            });
+        }
+
+        
+
+
+        //show popup
+        $("#btnadddepartment").click(function () {
+            //$.post("/Customer/AddCustomer", function (data) {
+            //    $("#modal-default").html(data);
+            //});
+
+            $("#modelbody").load("/Department/AddDepartment", function (e) {
+                $("#modal-default").modal("show");
+
+
+            });
+
+        })
+
+        //add customer button event
+        $("#btnaddemployee").click(function (e) {
+            e.preventDefault();
+            //var form = $("#employeeform");
+            var depndntarray = [];
+            var depndntdetails = {
+            };
+            var form = $('#employeeform')[0];
+            var file = $("#ImageFile").get(0).files;
+            var formdata = new FormData(form);
+            formdata.append("ImageFile", file[0]);
+            formdata.append("Employee_ID", $('#txtboxempployee_id').val());
+            var count = $('#example1 tr').length;
+            if (count > 0) {
+                var table = $("#example1 tbody");
+
+               
+                table.find('tr').each(function (i) {
+                    var $tds = $(this).find('td'),
+                        dpndntname = $tds.eq(0).text(),
+                        relation = $tds.eq(1).text(),
+                        Dob = $tds.eq(2).text(),
+                        mdcl = $tds.eq(3).text(),
+                        nic = $tds.eq(4).text();
+                 
+                    // do something with productId, product, Quantity natureOfVisitField
+                    depndntdetails.ID =0;
+                    depndntdetails.Depand_Name = dpndntname;
+                    depndntdetails.RelationShip = relation;
+                    depndntdetails.Dob = Dob;
+                    if (mdcl=="Yes") {
+                        depndntdetails.Medical = true;
+                    }
+                    else {
+                        depndntdetails.Medical = false;
+                    }
+                    
+                    depndntdetails.Nic = nic;
+                    depndntdetails.Employee_Primary_Id = parseInt($('#natureOfVisitField').val());;
+                    depndntdetails.Employee_Key = $('#txtboxempployee_id').val();
+                    //console.log(milestonedetails);
+
+                    depndntarray.push(Object.assign({}, depndntdetails));
+                    //console.log(milestonearray);
+
+
+
+
+
+
+                });
+                console.log(JSON.stringify(depndntarray));
+                console.log(depndntarray);
+                formdata.append("Depandants",JSON.stringify(depndntarray));
+            }
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                var abc = { empployeepropertys: formdata, depandant: depndntarray }
+                console.log(abc);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Employee/AddEmployee",
+                    data:formdata,// abc,//JSON.stringify({ empployeepropertys: formdata, depandant: depndntarray }),// { empployeepropertys: formdata, depandant: JSON.stringify(depndntarray) },//formdata,
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.success) {
+                            Command: toastr["success"]("", "Added Successfuly")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                            window.location.href = "/Employee/ViewEmployee"
+                        }
+                        else if (res.success == false && res.msg == 'Failed') {
+                                Command: toastr["error"]("Invalid ", " Failed")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+
+                })
+            }
+            else {
+                return false;
+            }
+
+        });
+
+        function bindCustomersInDataTable(data) {
+            var status = "Blocked".toString();
+            var table = $('#example1').DataTable({
+                data: JSON.parse(data.Employee),
+                columns: [
+                    { data: 'Depand_Name' },
+                    { data: 'RelationShip' },
+                    { data: 'Dob' },//or { data: 'MONTH', title: 'Month' }`
+                    { data: 'Medical' },
+                    { data: 'Nic' },
+                    {
+                        //"data": function (data, type, dataToSet) {
+
+                        //    if (data.Is_Active) {
+
+                        //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                        //    }
+                        //    else {
+                        //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                        //    }
+
+                        //  return data.Status + "<br/>" + data.Name;
+                        "data": "ID",
+                        "render": function (ID, type, full, meta) {
+
+                            return '<a href="#" class="btn btn-info" onclick="ShoCustomer(' + ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirDelete(' + ID + ')"><i class="fa fa-trash"></i></a>'
+
+                        },
+                        "orderable": true,
+                        "searchable": true,
+
+
+                    }
+                ]
+            });
+
+        }
+
+
+    });
+
+    function ShowCustomer(CustomerID) {
+
+        var url = "/Customer/ShowCustomer?Id=" + CustomerID;
+
+        $("#modelbody").load(url, function (e) {
+            var id = $('#Customer_Id').val();
+            if (id > 0) {
+                $('#btnaddnewcustomer').html("update ");
+            }
+            $("#modal-default").modal("show");
+        });
+    }
+
+    function ConfirmDelete(CustomerID) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Block!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/Customer/DeleteCustomer?id=' + CustomerID,
+                    dataType: 'JSON',
+                    success: function (res) {
+                        if (res.success) {
+                            swalWithBootstrapButtons.fire(
+                                'Done!',
+                                'Blocked',
+                                'success'
+                                )
+                            window.location.href = "/Customer/ViewCustomers"
+                        }
+                        else {
+                            swalWithBootstrapButtons.fire(
+                                'Error!',
+                                'Failes',
+                                'success'
+                                )
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+                })
+
+
+
+
+            } else if (
+                /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                  'Cancelled',
+                  '',
+                  'error'
+                )
+            }
+        })
+
+    }
+
+
+    $(".date-picker").datepicker({
+        format: "yyyy-mm-dd"
+    })
+
+    
+    $("#txtboxtotalsalary").focus(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+       
+    });
+    $("#txtboxbasesalary").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+    $("#txtboxalownce1").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+    $("#txtboxalownce2").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+    $("#txtboxalownce3").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+    $("#txtboxbenefit1").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+    $("#txtboxbenefit2").keyup(function () {
+        var basesalry = parseInt($("#txtboxbasesalary").val());
+        var allownce1 = parseInt($("#txtboxalownce1").val());
+        var allownce2 = parseInt($("#txtboxalownce2").val());
+        var allownce3 = parseInt($("#txtboxalownce3").val());
+        var totalsalary = basesalry + allownce1 + allownce2 + allownce3// $("#txtboxbasesalary").val() + $("#txtboxalownce1").val() + $("#txtboxalownce2").val() + $("#txtboxalownce3").val();
+        var benefit1 = parseInt($("#txtboxbenefit1").val());
+        var benefit2 = parseInt($("#txtboxbenefit2").val());
+        var totalpackg = totalsalary + benefit1 + benefit2;
+        $("#txtboxtotalpkg").val(totalpackg);
+        $("#txtboxtotalsalary").val(totalsalary);
+    });
+
+    $("#btnaddtogrid").click(function (e) {
+
+        //$('#milestones').show();
+        var closebutton = '<button type="button" class="close" style="float:left" id="deleterow" aria-label="Close">' +
+                         '<span aria-hidden="true" styel="color:red">&times;</span>' +
+                          '</button>'
+        var depname = $("#depname").val();
+        var relationship = $("#relationship").val();
+        var dob = $("#dob").val();
+        if ($("#mdcl").val() == 1) {
+            var mdcl ="Yes";
+        }
+        else {
+            var mdcl = "No";
+        }
+        
+        var nic = $("#nic").val();
+        var markup = "<tr><td>" + depname + "</td><td>" + relationship + "</td><td>" + dob + "</td><td>" + mdcl + "</td><td>" + nic + "</td><td>" + closebutton + "</td></tr>";
+        if (depname == "") {
+            alert("Enter depname");
+            return;
+        } else {
+
+            $("#example1 tbody").append(markup);
+        }
+        //$("#example1").dataTable();
+    });
+    </script>
+    }

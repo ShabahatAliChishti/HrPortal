@@ -1,0 +1,69 @@
+﻿@model HrProperty.Models.Department_Property
+@{
+    Layout = null;
+}
+
+
+
+@if (ViewBag.Department == null)
+{
+    <div class="card-body">
+        <form role="form" id="formadddeprtment">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Department Name</label>
+                        @Html.EditorFor(model => model.DepartmentName, new { htmlAttributes = new {@placeholder="Department Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+
+
+                </div>
+                @*@Html.HiddenFor(model => model.Department_Id, new { id = "natureOfVisitField",value=0 })*@
+
+
+                @*<div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                    </div>
+                    <br />
+                    @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                </div>*@
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    <div class="card-body">
+        <form role="form" id="formadddeprtment">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Department Name</label>
+                        @Html.EditorFor(model => model.DepartmentName, new { htmlAttributes = new { @placeholder = "Department Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+
+
+                </div>
+                @Html.HiddenFor(model => model.Department_Id, new { id = "natureOfVisitField" })
+
+
+                @*<div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                        </div>
+                        <br />
+                        @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                    </div>*@
+            </div>
+        </form>
+    </div>
+}
+
+

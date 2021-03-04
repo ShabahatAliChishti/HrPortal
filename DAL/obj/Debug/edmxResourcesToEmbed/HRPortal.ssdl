@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="RECORDHISTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Record_Table_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Record_Id" Type="int" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Operated_By" Type="int" />
+    <Property Name="Operation_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Attendance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_id" Type="varchar" MaxLength="20" />
+    <Property Name="Attendance_Date" Type="date" Nullable="false" />
+    <Property Name="Time_In" Type="time" Precision="0" Nullable="false" />
+    <Property Name="Time_Out" Type="time" Precision="0" Nullable="false" />
+    <Property Name="Total_hours" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeType_Id" Type="int" Nullable="false" />
+    <Property Name="LastEducation_Id" Type="int" Nullable="false" />
+    <Property Name="Designation_Id" Type="int" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+    <Property Name="Reference_Id" Type="int" Nullable="false" />
+    <Property Name="Salary_id" Type="int" />
+    <Property Name="Balance_Id" Type="int" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="70" />
+    <Property Name="Govt_ID" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="SSN_No" Type="nvarchar" MaxLength="70" />
+    <Property Name="Driving_License_No" Type="nvarchar" MaxLength="70" />
+    <Property Name="Image_path" Type="nvarchar" MaxLength="70" />
+    <Property Name="JoiningDate" Type="date" />
+    <Property Name="Deputation_Location" Type="nvarchar" MaxLength="70" />
+    <Property Name="LastEducationDate" Type="date" />
+    <Property Name="LastEmployer_Name" Type="varchar" MaxLength="70" />
+    <Property Name="LastEmployer_Add" Type="text" />
+    <Property Name="LastEmployer_Contact" Type="varchar" MaxLength="70" />
+    <Property Name="LastEmployer_FromDate" Type="date" />
+    <Property Name="LastEmployer_ToDate" Type="date" />
+    <Property Name="HomeAddress" Type="text" />
+    <Property Name="Home_ContactNo" Type="varchar" MaxLength="70" />
+    <Property Name="Emergency_ContactNo" Type="varchar" MaxLength="70" />
+    <Property Name="Emergency_Person_Name" Type="varchar" MaxLength="70" />
+    <Property Name="Emergency_Person_Relationship" Type="varchar" MaxLength="70" />
+    <Property Name="BloodGroup" Type="varchar" MaxLength="70" />
+    <Property Name="ModeOfTraveling" Type="varchar" MaxLength="70" />
+    <Property Name="VehichleNo" Type="nvarchar" MaxLength="40" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="U_id" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="BaseSalary" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Allownce1" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Allownce2" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Allownce3" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TotalSalary" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="LeaveBalnces" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Benefit1" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Benefit2" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="BankAccountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attendance_Id" Type="int" />
+    <Property Name="Last_Institue_Name" Type="text" />
+  </EntityType>
+  <EntityType Name="tbl_Holidays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="holiday_month" Type="int" />
+    <Property Name="holiday_year" Type="int" />
+    <Property Name="holiday" Type="int" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Project">
+    <Key>
+      <PropertyRef Name="Project_Id" />
+    </Key>
+    <Property Name="Project_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Client_id" Type="int" />
+    <Property Name="Project_Type" Type="int" />
+    <Property Name="Resource_Id" Type="int" />
+    <Property Name="Department_ID" Type="int" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="70" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="Work_Date" Type="date" />
+    <Property Name="Task_Description" Type="text" />
+    <Property Name="Employee_Cost" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Budget_Cost" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Allocated_time" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Start_Time" Type="datetime" />
+    <Property Name="End_Time" Type="datetime" />
+    <Property Name="Total_spend_Time" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Actual_Cost" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Varrience" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="U_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Project_Employee_Working_hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectid" Type="int" />
+    <Property Name="employeeid" Type="int" />
+    <Property Name="starttime" Type="datetime" />
+    <Property Name="endtime" Type="datetime" />
+    <Property Name="totaltime" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="status" Type="varchar" MaxLength="20" />
+    <Property Name="IsCompleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Projects">
+    <Key>
+      <PropertyRef Name="Project_Id" />
+    </Key>
+    <Property Name="Project_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project_Name" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Project_Type_Id" Type="int" Nullable="false" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
+    <Property Name="Resource_Id" Type="int" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+    <Property Name="Project_Description" Type="text" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="Work_Date" Type="date" />
+    <Property Name="Estimated_Budget" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Actual_Budget" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="Date Created" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="Last_Updated_Date" Type="datetime" />
+    <Property Name="Last_Updated_By" Type="int" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="In_Progress" Type="bit" />
+    <Property Name="IS_Completed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="70" />
+    <Property Name="Status" Type="varchar" MaxLength="70" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblClient">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Client_Name" Type="varchar" MaxLength="70" />
+    <Property Name="Client_No" Type="varchar" MaxLength="70" />
+    <Property Name="Client_Mobile" Type="varchar" MaxLength="70" />
+    <Property Name="Client_Address" Type="text" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Status" Type="varchar" MaxLength="70" />
+    <Property Name="User_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tblDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDesignation">
+    <Key>
+      <PropertyRef Name="DesignationID" />
+    </Key>
+    <Property Name="DesignationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="isActive" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblEmployeeType">
+    <Key>
+      <PropertyRef Name="EmployeeTypeID" />
+    </Key>
+    <Property Name="EmployeeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeType" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblProjectType">
+    <Key>
+      <PropertyRef Name="ProjectTypeId" />
+    </Key>
+    <Property Name="ProjectTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="70" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+  </EntityType>
+  <Function Name="fnSplitter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDs" Type="varchar(max)" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="sp_Attendance_Employee_SelectALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Attendance_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Emp_Id" Type="varchar" Mode="In" />
+    <Parameter Name="Attendance_Date" Type="date" Mode="In" />
+    <Parameter Name="Time_In" Type="time" Mode="In" />
+    <Parameter Name="Time_Out" Type="time" Mode="In" />
+    <Parameter Name="total_hours" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="sp_Client_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Client_Name" Type="varchar" Mode="In" />
+    <Parameter Name="Client_No" Type="varchar" Mode="In" />
+    <Parameter Name="Client_Mobile" Type="varchar" Mode="In" />
+    <Parameter Name="Client_Address" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="User_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Client_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Client_Name" Type="varchar" Mode="In" />
+    <Parameter Name="Client_No" Type="varchar" Mode="In" />
+    <Parameter Name="Client_Mobile" Type="varchar" Mode="In" />
+    <Parameter Name="Client_Address" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="User_Id" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Completed_ProjectFOrEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="empid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Department_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="d_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="date_created" Type="date" Mode="In" />
+    <Parameter Name="is_active" Type="bit" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Department_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="d_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Designation_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Designation_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="designation" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="isactive" Type="bit" Mode="In" />
+    <Parameter Name="Datecreated" Type="date" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Designation_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="designation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Employee_Attendance_SAlary_ByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="from" Type="date" Mode="In" />
+    <Parameter Name="to" Type="date" Mode="In" />
+    <Parameter Name="attid" Type="int" Mode="In" />
+    <Parameter Name="totalDays" Type="int" Mode="In" />
+    <Parameter Name="businessDays" Type="int" Mode="In" />
+    <Parameter Name="regularHolidays" Type="int" Mode="In" />
+    <Parameter Name="DaysWorked" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Employee_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeType_Id" Type="int" Mode="In" />
+    <Parameter Name="LastEducation_Id" Type="int" Mode="In" />
+    <Parameter Name="Designation_Id" Type="int" Mode="In" />
+    <Parameter Name="Department_Id" Type="int" Mode="In" />
+    <Parameter Name="Reference_Id" Type="int" Mode="In" />
+    <Parameter Name="Salary_id" Type="int" Mode="In" />
+    <Parameter Name="Balance_Id" Type="int" Mode="In" />
+    <Parameter Name="EmployeeName" Type="varchar" Mode="In" />
+    <Parameter Name="Govt_ID" Type="varchar" Mode="In" />
+    <Parameter Name="SSN_No" Type="varchar" Mode="In" />
+    <Parameter Name="Driving_License_No" Type="varchar" Mode="In" />
+    <Parameter Name="Image_path" Type="varchar" Mode="In" />
+    <Parameter Name="JoiningDate" Type="datetime" Mode="In" />
+    <Parameter Name="Deputation_Location" Type="varchar" Mode="In" />
+    <Parameter Name="LastEducationDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastEmployer_Name" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_Add" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_Contact" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastEmployer_ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="HomeAddress" Type="varchar" Mode="In" />
+    <Parameter Name="Home_ContactNo" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_ContactNo" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_Person_Name" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_Person_Relationship" Type="varchar" Mode="In" />
+    <Parameter Name="BloodGroup" Type="varchar" Mode="In" />
+    <Parameter Name="ModeOfTraveling" Type="varchar" Mode="In" />
+    <Parameter Name="VehichleNo" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="U_id" Type="int" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="basesalry" Type="numeric" Mode="In" />
+    <Parameter Name="allow1" Type="numeric" Mode="In" />
+    <Parameter Name="allow2" Type="numeric" Mode="In" />
+    <Parameter Name="allow3" Type="numeric" Mode="In" />
+    <Parameter Name="totalsalry" Type="numeric" Mode="In" />
+    <Parameter Name="leaveblnce" Type="numeric" Mode="In" />
+    <Parameter Name="benefit1" Type="numeric" Mode="In" />
+    <Parameter Name="benefit2" Type="numeric" Mode="In" />
+    <Parameter Name="BankAccountNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Attendance_Id" Type="int" Mode="In" />
+    <Parameter Name="lastinstitue" Type="text" Mode="In" />
+    <Parameter Name="ErrorCode" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Employee_Type_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="employeetype" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="isactive" Type="bit" Mode="In" />
+    <Parameter Name="Datecreated" Type="date" Mode="In" />
+    <Parameter Name="user_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Employee_Type_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Employee_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="employee_Id" Type="int" Mode="In" />
+    <Parameter Name="EmployeType_Id" Type="int" Mode="In" />
+    <Parameter Name="LastEducation_Id" Type="int" Mode="In" />
+    <Parameter Name="Designation_Id" Type="int" Mode="In" />
+    <Parameter Name="Department_Id" Type="int" Mode="In" />
+    <Parameter Name="Reference_Id" Type="int" Mode="In" />
+    <Parameter Name="Salary_id" Type="int" Mode="In" />
+    <Parameter Name="Balance_Id" Type="int" Mode="In" />
+    <Parameter Name="EmployeeName" Type="varchar" Mode="In" />
+    <Parameter Name="Govt_ID" Type="varchar" Mode="In" />
+    <Parameter Name="SSN_No" Type="varchar" Mode="In" />
+    <Parameter Name="Driving_License_No" Type="varchar" Mode="In" />
+    <Parameter Name="Image_path" Type="varchar" Mode="In" />
+    <Parameter Name="JoiningDate" Type="datetime" Mode="In" />
+    <Parameter Name="Deputation_Location" Type="varchar" Mode="In" />
+    <Parameter Name="LastEducationDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastEmployer_Name" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_Add" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_Contact" Type="varchar" Mode="In" />
+    <Parameter Name="LastEmployer_FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastEmployer_ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="HomeAddress" Type="varchar" Mode="In" />
+    <Parameter Name="Home_ContactNo" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_ContactNo" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_Person_Name" Type="varchar" Mode="In" />
+    <Parameter Name="Emergency_Person_Relationship" Type="varchar" Mode="In" />
+    <Parameter Name="BloodGroup" Type="varchar" Mode="In" />
+    <Parameter Name="ModeOfTraveling" Type="varchar" Mode="In" />
+    <Parameter Name="VehichleNo" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="U_id" Type="int" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="basesalry" Type="numeric" Mode="In" />
+    <Parameter Name="allow1" Type="numeric" Mode="In" />
+    <Parameter Name="allow2" Type="numeric" Mode="In" />
+    <Parameter Name="allow3" Type="numeric" Mode="In" />
+    <Parameter Name="totalsalry" Type="numeric" Mode="In" />
+    <Parameter Name="leaveblnce" Type="numeric" Mode="In" />
+    <Parameter Name="benefit1" Type="numeric" Mode="In" />
+    <Parameter Name="benefit2" Type="numeric" Mode="In" />
+    <Parameter Name="BankAccountNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Attendance_Id" Type="int" Mode="In" />
+    <Parameter Name="lastinstituename" Type="text" Mode="In" />
+    <Parameter Name="ErrorCode" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="sp_Employees_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Employees_SelectOne" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeType_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_EmployeeType_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="employeetype" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Empworking_GetStartDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Get_All_Payrolls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="from" Type="date" Mode="In" />
+    <Parameter Name="to" Type="date" Mode="In" />
+    <Parameter Name="attid" Type="varchar" Mode="In" />
+    <Parameter Name="totalDays" Type="int" Mode="In" />
+    <Parameter Name="businessDays" Type="int" Mode="In" />
+    <Parameter Name="regularHolidays" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Get_Employee_Attendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="from" Type="date" Mode="In" />
+    <Parameter Name="to" Type="date" Mode="In" />
+    <Parameter Name="attid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllClients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetAllDepartments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetGeneralHolidays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="month" Type="int" Mode="In" />
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Holidays_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="holiday_month" Type="int" Mode="In" />
+    <Parameter Name="holiday_year" Type="int" Mode="In" />
+    <Parameter Name="holiday" Type="int" Mode="In" />
+    <Parameter Name="is_active" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Project_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clientid" Type="int" Mode="In" />
+    <Parameter Name="projecttype" Type="int" Mode="In" />
+    <Parameter Name="resourceid" Type="int" Mode="In" />
+    <Parameter Name="departmentid" Type="int" Mode="In" />
+    <Parameter Name="projectname" Type="nvarchar" Mode="In" />
+    <Parameter Name="startdate" Type="date" Mode="In" />
+    <Parameter Name="workdate" Type="date" Mode="In" />
+    <Parameter Name="taskdecsription" Type="text" Mode="In" />
+    <Parameter Name="employeecost" Type="numeric" Mode="In" />
+    <Parameter Name="budgetcost" Type="numeric" Mode="In" />
+    <Parameter Name="alloctedtime" Type="numeric" Mode="In" />
+    <Parameter Name="starttime" Type="numeric" Mode="In" />
+    <Parameter Name="endtime" Type="numeric" Mode="In" />
+    <Parameter Name="totalSpendtime" Type="numeric" Mode="In" />
+    <Parameter Name="actualCost" Type="numeric" Mode="In" />
+    <Parameter Name="varrience" Type="numeric" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="remarks" Type="text" Mode="In" />
+    <Parameter Name="datecreated" Type="date" Mode="In" />
+    <Parameter Name="u_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Project_Insert_ByAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clientid" Type="int" Mode="In" />
+    <Parameter Name="projecttype" Type="int" Mode="In" />
+    <Parameter Name="resourceid" Type="int" Mode="In" />
+    <Parameter Name="departmentid" Type="int" Mode="In" />
+    <Parameter Name="projectname" Type="nvarchar" Mode="In" />
+    <Parameter Name="startdate" Type="date" Mode="In" />
+    <Parameter Name="workdate" Type="date" Mode="In" />
+    <Parameter Name="taskdecsription" Type="text" Mode="In" />
+    <Parameter Name="employeecost" Type="numeric" Mode="In" />
+    <Parameter Name="budgetcost" Type="numeric" Mode="In" />
+    <Parameter Name="alloctedtime" Type="numeric" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="remarks" Type="text" Mode="In" />
+    <Parameter Name="datecreated" Type="date" Mode="In" />
+    <Parameter Name="u_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Project_Selct_One" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Project_Type_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_ProjectEmployeeWorkingHours_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectid" Type="int" Mode="In" />
+    <Parameter Name="employeeid" Type="int" Mode="In" />
+    <Parameter Name="starttime" Type="datetime" Mode="In" />
+    <Parameter Name="endtime" Type="datetime" Mode="In" />
+    <Parameter Name="totaltime" Type="numeric" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="iscompleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Projects_Assigned_InProgress_projects_Resource" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="resourceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Projects_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_PRojectType_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projecttype" Type="nvarchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="isactive" Type="bit" Mode="In" />
+    <Parameter Name="datecreated" Type="date" Mode="In" />
+    <Parameter Name="u_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Role_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_SelectOne" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="tblName" Type="varchar" Mode="In" />
+    <Parameter Name="colName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Status_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tableName" Type="nvarchar" Mode="In" />
+    <Parameter Name="recordId" Type="int" Mode="In" />
+    <Parameter Name="operation" Type="nvarchar" Mode="In" />
+    <Parameter Name="operationBy" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Status_Update_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tableName" Type="nvarchar" Mode="In" />
+    <Parameter Name="recordId" Type="int" Mode="In" />
+    <Parameter Name="operation" Type="nvarchar" Mode="In" />
+    <Parameter Name="operationBy" Type="int" Mode="In" />
+    <Parameter Name="ColName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_tbl_Project_Employee_Working_hours_EndTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectid" Type="int" Mode="In" />
+    <Parameter Name="endtime" Type="datetime" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="iscompleted" Type="bit" Mode="In" />
+    <Parameter Name="totaltime" Type="numeric" Mode="In" />
+    <Parameter Name="taskcompleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_User_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="DateCreated" Type="date" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+    <Parameter Name="empid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_USER_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="code" Type="varchar" Mode="In" />
+    <Parameter Name="distributorCode" Type="varchar" Mode="In" />
+    <Parameter Name="companyID" Type="int" Mode="In" />
+    <Parameter Name="userName" Type="varchar" Mode="In" />
+    <Parameter Name="firstName" Type="varchar" Mode="In" />
+    <Parameter Name="lastName" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="int" Mode="In" />
+    <Parameter Name="insertBy" Type="int" Mode="In" />
+    <Parameter Name="insertionDate" Type="datetime" Mode="In" />
+    <Parameter Name="PageNum" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="sortColumn" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="TotalRowsNum" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="HRPortalModelStoreContainer">
+    <EntitySet Name="RECORDHISTORY" EntityType="Self.RECORDHISTORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Attendance" EntityType="Self.tbl_Attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Employee" EntityType="Self.tbl_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Holidays" EntityType="Self.tbl_Holidays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Project" EntityType="Self.tbl_Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Project_Employee_Working_hours" EntityType="Self.tbl_Project_Employee_Working_hours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Projects" EntityType="Self.tbl_Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Role" EntityType="Self.tbl_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClient" EntityType="Self.tblClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDesignation" EntityType="Self.tblDesignation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployeeType" EntityType="Self.tblEmployeeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProjectType" EntityType="Self.tblProjectType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

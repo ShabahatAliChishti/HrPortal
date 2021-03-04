@@ -1,0 +1,52 @@
+﻿@model HrProperty.Models.Deputation_Property
+@{ 
+    Layout = null;
+}
+
+
+    <div class="card-body">
+        <form role="form" id="formadddeprtment">
+            <div class="row">
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Deputation Name</label>
+                        @Html.EditorFor(model => model.Deputation_Location, new { htmlAttributes = new { @placeholder = "Deputation Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Deputation_Location, "", new { @class = "text-danger" })
+
+
+                </div>
+
+
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Latitude</label>
+                        @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @placeholder = "Latitude", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+
+
+                </div>
+
+
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Longitude</label>
+                        @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @placeholder = "Longitude", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+
+
+                    @Html.HiddenFor(model => model.Id)
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+
+

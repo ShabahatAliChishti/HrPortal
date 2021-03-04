@@ -1,0 +1,45 @@
+D:\Umer\HrPortal\Project\BLL\bin\Release\BLL.dll
+D:\Umer\HrPortal\Project\BLL\bin\Release\BLL.pdb
+D:\Umer\HrPortal\Project\BLL\bin\Release\DAL.dll
+D:\Umer\HrPortal\Project\BLL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\Project\BLL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\Project\BLL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\Project\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\Project\BLL\obj\Release\BLL.dll
+D:\Umer\HrPortal\Project\BLL\obj\Release\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\obj\Release\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\BLL\obj\Release\BLL.pdb
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\BLL.dll
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\BLL.pdb
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\DAL.dll
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\HrProperty.dll
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\DAL.pdb
+E:\Talha\Main Projects\HrPortal\BLL\bin\Release\HrProperty.pdb
+E:\Talha\Main Projects\HrPortal\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+E:\Talha\Main Projects\HrPortal\BLL\obj\Release\BLL.dll
+E:\Talha\Main Projects\HrPortal\BLL\obj\Release\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\obj\Release\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\BLL\obj\Release\BLL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\BLL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\BLL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\HrProperty.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\bin\Release\HrProperty.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\obj\Release\BLL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\BLL\obj\Release\BLL.pdb

@@ -1,0 +1,917 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="fnSplitter_Result">
+    <Property Name="ID" Type="Int32" />
+  </ComplexType>
+  <EntityType Name="RECORDHISTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Record_Table_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Record_Id" Type="Int32" />
+    <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Operated_By" Type="Int32" />
+    <Property Name="Operation_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Attendance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Attendance_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Time_In" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="Time_Out" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="Total_hours" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeType_Id" Type="Int32" Nullable="false" />
+    <Property Name="LastEducation_Id" Type="Int32" Nullable="false" />
+    <Property Name="Designation_Id" Type="Int32" Nullable="false" />
+    <Property Name="Department_Id" Type="Int32" Nullable="false" />
+    <Property Name="Reference_Id" Type="Int32" Nullable="false" />
+    <Property Name="Salary_id" Type="Int32" />
+    <Property Name="Balance_Id" Type="Int32" />
+    <Property Name="EmployeeName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Govt_ID" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SSN_No" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Driving_License_No" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Image_path" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+    <Property Name="Deputation_Location" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="LastEducationDate" Type="DateTime" Precision="0" />
+    <Property Name="LastEmployer_Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="LastEmployer_Add" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastEmployer_Contact" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="LastEmployer_FromDate" Type="DateTime" Precision="0" />
+    <Property Name="LastEmployer_ToDate" Type="DateTime" Precision="0" />
+    <Property Name="HomeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Home_ContactNo" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_ContactNo" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Person_Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Person_Relationship" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ModeOfTraveling" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="VehichleNo" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_id" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="BaseSalary" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Allownce1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Allownce2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Allownce3" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveBalnces" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Benefit1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Benefit2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BankAccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attendance_Id" Type="Int32" />
+    <Property Name="Last_Institue_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Holidays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="holiday_month" Type="Int32" />
+    <Property Name="holiday_year" Type="Int32" />
+    <Property Name="holiday" Type="Int32" />
+    <Property Name="is_active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbl_Project">
+    <Key>
+      <PropertyRef Name="Project_Id" />
+    </Key>
+    <Property Name="Project_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_id" Type="Int32" />
+    <Property Name="Project_Type" Type="Int32" />
+    <Property Name="Resource_Id" Type="Int32" />
+    <Property Name="Department_ID" Type="Int32" />
+    <Property Name="Project_Name" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Start_Date" Type="DateTime" Precision="0" />
+    <Property Name="Work_Date" Type="DateTime" Precision="0" />
+    <Property Name="Task_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_Cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Budget_Cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Allocated_time" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Start_Time" Type="DateTime" Precision="3" />
+    <Property Name="End_Time" Type="DateTime" Precision="3" />
+    <Property Name="Total_spend_Time" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Actual_Cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Varrience" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="U_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Project_Employee_Working_hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectid" Type="Int32" />
+    <Property Name="employeeid" Type="Int32" />
+    <Property Name="starttime" Type="DateTime" Precision="3" />
+    <Property Name="endtime" Type="DateTime" Precision="3" />
+    <Property Name="totaltime" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsCompleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbl_Projects">
+    <Key>
+      <PropertyRef Name="Project_Id" />
+    </Key>
+    <Property Name="Project_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Project_Name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Project_Type_Id" Type="Int32" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <Property Name="Resource_Id" Type="Int32" Nullable="false" />
+    <Property Name="Department_Id" Type="Int32" Nullable="false" />
+    <Property Name="Project_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Start_Date" Type="DateTime" Precision="0" />
+    <Property Name="Work_Date" Type="DateTime" Precision="0" />
+    <Property Name="Estimated_Budget" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Actual_Budget" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="Last_Updated_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_Updated_By" Type="Int32" />
+    <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="In_Progress" Type="Boolean" />
+    <Property Name="IS_Completed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbl_Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblClient">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Client_No" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Mobile" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Status" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="User_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDesignation">
+    <Key>
+      <PropertyRef Name="DesignationID" />
+    </Key>
+    <Property Name="DesignationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEmployeeType">
+    <Key>
+      <PropertyRef Name="EmployeeTypeID" />
+    </Key>
+    <Property Name="EmployeeTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblProjectType">
+    <Key>
+      <PropertyRef Name="ProjectTypeId" />
+    </Key>
+    <Property Name="ProjectTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="HRPortalEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RECORDHISTORies" EntityType="Self.RECORDHISTORY" />
+    <EntitySet Name="tbl_Attendance" EntityType="Self.tbl_Attendance" />
+    <EntitySet Name="tbl_Employee" EntityType="Self.tbl_Employee" />
+    <EntitySet Name="tbl_Holidays" EntityType="Self.tbl_Holidays" />
+    <EntitySet Name="tbl_Project" EntityType="Self.tbl_Project" />
+    <EntitySet Name="tbl_Project_Employee_Working_hours" EntityType="Self.tbl_Project_Employee_Working_hours" />
+    <EntitySet Name="tbl_Projects" EntityType="Self.tbl_Projects" />
+    <EntitySet Name="tbl_Role" EntityType="Self.tbl_Role" />
+    <EntitySet Name="tblClients" EntityType="Self.tblClient" />
+    <EntitySet Name="tblDepartments" EntityType="Self.tblDepartment" />
+    <EntitySet Name="tblDesignations" EntityType="Self.tblDesignation" />
+    <EntitySet Name="tblEmployeeTypes" EntityType="Self.tblEmployeeType" />
+    <EntitySet Name="tblProjectTypes" EntityType="Self.tblProjectType" />
+    <EntitySet Name="USERs" EntityType="Self.USER" />
+    <FunctionImport Name="fnSplitter" IsComposable="true" ReturnType="Collection(HRPortalModel.fnSplitter_Result)">
+      <Parameter Name="IDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Attendance_Employee_SelectALL" ReturnType="Collection(HRPortalModel.sp_Attendance_Employee_SelectALL_Result)" />
+    <FunctionImport Name="sp_Attendance_Insert">
+      <Parameter Name="Emp_Id" Mode="In" Type="String" />
+      <Parameter Name="Attendance_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Time_In" Mode="In" Type="Time" />
+      <Parameter Name="Time_Out" Mode="In" Type="Time" />
+      <Parameter Name="total_hours" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Client_Insert">
+      <Parameter Name="Client_Name" Mode="In" Type="String" />
+      <Parameter Name="Client_No" Mode="In" Type="String" />
+      <Parameter Name="Client_Mobile" Mode="In" Type="String" />
+      <Parameter Name="Client_Address" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="User_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Client_Update">
+      <Parameter Name="Client_Name" Mode="In" Type="String" />
+      <Parameter Name="Client_No" Mode="In" Type="String" />
+      <Parameter Name="Client_Mobile" Mode="In" Type="String" />
+      <Parameter Name="Client_Address" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="User_Id" Mode="In" Type="Int32" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Completed_ProjectFOrEmployee" ReturnType="Collection(HRPortalModel.sp_Completed_ProjectFOrEmployee_Result)">
+      <Parameter Name="empid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Department_Insert">
+      <Parameter Name="d_name" Mode="In" Type="String" />
+      <Parameter Name="date_created" Mode="In" Type="DateTime" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Department_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="d_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Designation_GetAll" ReturnType="Collection(HRPortalModel.sp_Designation_GetAll_Result)" />
+    <FunctionImport Name="sp_Designation_Insert">
+      <Parameter Name="designation" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="isactive" Mode="In" Type="Boolean" />
+      <Parameter Name="Datecreated" Mode="In" Type="DateTime" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Designation_Update">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="designation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Employee_Attendance_SAlary_ByDate">
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="attid" Mode="In" Type="Int32" />
+      <Parameter Name="totalDays" Mode="In" Type="Int32" />
+      <Parameter Name="businessDays" Mode="In" Type="Int32" />
+      <Parameter Name="regularHolidays" Mode="In" Type="Int32" />
+      <Parameter Name="DaysWorked" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Employee_Insert">
+      <Parameter Name="EmployeType_Id" Mode="In" Type="Int32" />
+      <Parameter Name="LastEducation_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Designation_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Department_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Reference_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Salary_id" Mode="In" Type="Int32" />
+      <Parameter Name="Balance_Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeName" Mode="In" Type="String" />
+      <Parameter Name="Govt_ID" Mode="In" Type="String" />
+      <Parameter Name="SSN_No" Mode="In" Type="String" />
+      <Parameter Name="Driving_License_No" Mode="In" Type="String" />
+      <Parameter Name="Image_path" Mode="In" Type="String" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Deputation_Location" Mode="In" Type="String" />
+      <Parameter Name="LastEducationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastEmployer_Name" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_Add" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_Contact" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastEmployer_ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="HomeAddress" Mode="In" Type="String" />
+      <Parameter Name="Home_ContactNo" Mode="In" Type="String" />
+      <Parameter Name="Emergency_ContactNo" Mode="In" Type="String" />
+      <Parameter Name="Emergency_Person_Name" Mode="In" Type="String" />
+      <Parameter Name="Emergency_Person_Relationship" Mode="In" Type="String" />
+      <Parameter Name="BloodGroup" Mode="In" Type="String" />
+      <Parameter Name="ModeOfTraveling" Mode="In" Type="String" />
+      <Parameter Name="VehichleNo" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="U_id" Mode="In" Type="Int32" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="basesalry" Mode="In" Type="Decimal" />
+      <Parameter Name="allow1" Mode="In" Type="Decimal" />
+      <Parameter Name="allow2" Mode="In" Type="Decimal" />
+      <Parameter Name="allow3" Mode="In" Type="Decimal" />
+      <Parameter Name="totalsalry" Mode="In" Type="Decimal" />
+      <Parameter Name="leaveblnce" Mode="In" Type="Decimal" />
+      <Parameter Name="benefit1" Mode="In" Type="Decimal" />
+      <Parameter Name="benefit2" Mode="In" Type="Decimal" />
+      <Parameter Name="BankAccountNo" Mode="In" Type="String" />
+      <Parameter Name="Attendance_Id" Mode="In" Type="Int32" />
+      <Parameter Name="lastinstitue" Mode="In" Type="String" />
+      <Parameter Name="ErrorCode" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Employee_Type_Insert">
+      <Parameter Name="employeetype" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="isactive" Mode="In" Type="Boolean" />
+      <Parameter Name="Datecreated" Mode="In" Type="DateTime" />
+      <Parameter Name="user_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Employee_Type_SelectAll" ReturnType="Collection(HRPortalModel.sp_Employee_Type_SelectAll_Result)" />
+    <FunctionImport Name="sp_Employee_Update">
+      <Parameter Name="employee_Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeType_Id" Mode="In" Type="Int32" />
+      <Parameter Name="LastEducation_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Designation_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Department_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Reference_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Salary_id" Mode="In" Type="Int32" />
+      <Parameter Name="Balance_Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmployeeName" Mode="In" Type="String" />
+      <Parameter Name="Govt_ID" Mode="In" Type="String" />
+      <Parameter Name="SSN_No" Mode="In" Type="String" />
+      <Parameter Name="Driving_License_No" Mode="In" Type="String" />
+      <Parameter Name="Image_path" Mode="In" Type="String" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Deputation_Location" Mode="In" Type="String" />
+      <Parameter Name="LastEducationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastEmployer_Name" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_Add" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_Contact" Mode="In" Type="String" />
+      <Parameter Name="LastEmployer_FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastEmployer_ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="HomeAddress" Mode="In" Type="String" />
+      <Parameter Name="Home_ContactNo" Mode="In" Type="String" />
+      <Parameter Name="Emergency_ContactNo" Mode="In" Type="String" />
+      <Parameter Name="Emergency_Person_Name" Mode="In" Type="String" />
+      <Parameter Name="Emergency_Person_Relationship" Mode="In" Type="String" />
+      <Parameter Name="BloodGroup" Mode="In" Type="String" />
+      <Parameter Name="ModeOfTraveling" Mode="In" Type="String" />
+      <Parameter Name="VehichleNo" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="U_id" Mode="In" Type="Int32" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="basesalry" Mode="In" Type="Decimal" />
+      <Parameter Name="allow1" Mode="In" Type="Decimal" />
+      <Parameter Name="allow2" Mode="In" Type="Decimal" />
+      <Parameter Name="allow3" Mode="In" Type="Decimal" />
+      <Parameter Name="totalsalry" Mode="In" Type="Decimal" />
+      <Parameter Name="leaveblnce" Mode="In" Type="Decimal" />
+      <Parameter Name="benefit1" Mode="In" Type="Decimal" />
+      <Parameter Name="benefit2" Mode="In" Type="Decimal" />
+      <Parameter Name="BankAccountNo" Mode="In" Type="String" />
+      <Parameter Name="Attendance_Id" Mode="In" Type="Int32" />
+      <Parameter Name="lastinstituename" Mode="In" Type="String" />
+      <Parameter Name="ErrorCode" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Employees_GetAll" ReturnType="Collection(HRPortalModel.sp_Employees_GetAll_Result)" />
+    <FunctionImport Name="sp_Employees_SelectOne" ReturnType="Collection(HRPortalModel.sp_Employees_SelectOne_Result)">
+      <Parameter Name="EmployeType_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EmployeeType_Update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="employeetype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Empworking_GetStartDate" ReturnType="Collection(HRPortalModel.sp_Empworking_GetStartDate_Result)">
+      <Parameter Name="projectid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Get_All_Payrolls">
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="attid" Mode="In" Type="String" />
+      <Parameter Name="totalDays" Mode="In" Type="Int32" />
+      <Parameter Name="businessDays" Mode="In" Type="Int32" />
+      <Parameter Name="regularHolidays" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Get_Employee_Attendance" ReturnType="Collection(HRPortalModel.sp_Get_Employee_Attendance_Result)">
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="attid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetAllClients" ReturnType="Collection(HRPortalModel.sp_GetAllClients_Result)" />
+    <FunctionImport Name="sp_GetAllDepartments" ReturnType="Collection(HRPortalModel.sp_GetAllDepartments_Result)" />
+    <FunctionImport Name="sp_GetAllUsers" ReturnType="Collection(HRPortalModel.sp_GetAllUsers_Result)" />
+    <FunctionImport Name="sp_GetGeneralHolidays" ReturnType="Collection(Int32)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Holidays_Insert">
+      <Parameter Name="holiday_month" Mode="In" Type="Int32" />
+      <Parameter Name="holiday_year" Mode="In" Type="Int32" />
+      <Parameter Name="holiday" Mode="In" Type="Int32" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Project_Insert">
+      <Parameter Name="clientid" Mode="In" Type="Int32" />
+      <Parameter Name="projecttype" Mode="In" Type="Int32" />
+      <Parameter Name="resourceid" Mode="In" Type="Int32" />
+      <Parameter Name="departmentid" Mode="In" Type="Int32" />
+      <Parameter Name="projectname" Mode="In" Type="String" />
+      <Parameter Name="startdate" Mode="In" Type="DateTime" />
+      <Parameter Name="workdate" Mode="In" Type="DateTime" />
+      <Parameter Name="taskdecsription" Mode="In" Type="String" />
+      <Parameter Name="employeecost" Mode="In" Type="Decimal" />
+      <Parameter Name="budgetcost" Mode="In" Type="Decimal" />
+      <Parameter Name="alloctedtime" Mode="In" Type="Decimal" />
+      <Parameter Name="starttime" Mode="In" Type="Decimal" />
+      <Parameter Name="endtime" Mode="In" Type="Decimal" />
+      <Parameter Name="totalSpendtime" Mode="In" Type="Decimal" />
+      <Parameter Name="actualCost" Mode="In" Type="Decimal" />
+      <Parameter Name="varrience" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="datecreated" Mode="In" Type="DateTime" />
+      <Parameter Name="u_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Project_Insert_ByAdmin">
+      <Parameter Name="clientid" Mode="In" Type="Int32" />
+      <Parameter Name="projecttype" Mode="In" Type="Int32" />
+      <Parameter Name="resourceid" Mode="In" Type="Int32" />
+      <Parameter Name="departmentid" Mode="In" Type="Int32" />
+      <Parameter Name="projectname" Mode="In" Type="String" />
+      <Parameter Name="startdate" Mode="In" Type="DateTime" />
+      <Parameter Name="workdate" Mode="In" Type="DateTime" />
+      <Parameter Name="taskdecsription" Mode="In" Type="String" />
+      <Parameter Name="employeecost" Mode="In" Type="Decimal" />
+      <Parameter Name="budgetcost" Mode="In" Type="Decimal" />
+      <Parameter Name="alloctedtime" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="datecreated" Mode="In" Type="DateTime" />
+      <Parameter Name="u_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Project_Selct_One" ReturnType="Collection(HRPortalModel.sp_Project_Selct_One_Result)">
+      <Parameter Name="projectid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Project_Type_SelectAll" ReturnType="Collection(HRPortalModel.sp_Project_Type_SelectAll_Result)" />
+    <FunctionImport Name="sp_ProjectEmployeeWorkingHours_Insert">
+      <Parameter Name="projectid" Mode="In" Type="Int32" />
+      <Parameter Name="employeeid" Mode="In" Type="Int32" />
+      <Parameter Name="starttime" Mode="In" Type="DateTime" />
+      <Parameter Name="endtime" Mode="In" Type="DateTime" />
+      <Parameter Name="totaltime" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="iscompleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Projects_Assigned_InProgress_projects_Resource" ReturnType="Collection(HRPortalModel.sp_Projects_Assigned_InProgress_projects_Resource_Result)">
+      <Parameter Name="resourceId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Projects_SelectAll" ReturnType="Collection(HRPortalModel.sp_Projects_SelectAll_Result)" />
+    <FunctionImport Name="sp_PRojectType_Insert">
+      <Parameter Name="projecttype" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="isactive" Mode="In" Type="Boolean" />
+      <Parameter Name="datecreated" Mode="In" Type="DateTime" />
+      <Parameter Name="u_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Role_GetAll" ReturnType="Collection(HRPortalModel.sp_Role_GetAll_Result)" />
+    <FunctionImport Name="sp_SelectOne" ReturnType="Collection(HRPortalModel.sp_SelectOne_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="tblName" Mode="In" Type="String" />
+      <Parameter Name="colName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Status_Update">
+      <Parameter Name="tableName" Mode="In" Type="String" />
+      <Parameter Name="recordId" Mode="In" Type="Int32" />
+      <Parameter Name="operation" Mode="In" Type="String" />
+      <Parameter Name="operationBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Status_Update_Delete">
+      <Parameter Name="tableName" Mode="In" Type="String" />
+      <Parameter Name="recordId" Mode="In" Type="Int32" />
+      <Parameter Name="operation" Mode="In" Type="String" />
+      <Parameter Name="operationBy" Mode="In" Type="Int32" />
+      <Parameter Name="ColName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_tbl_Project_Employee_Working_hours_EndTime">
+      <Parameter Name="projectid" Mode="In" Type="Int32" />
+      <Parameter Name="endtime" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="iscompleted" Mode="In" Type="Boolean" />
+      <Parameter Name="totaltime" Mode="In" Type="Decimal" />
+      <Parameter Name="taskcompleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_User_Insert">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="DateCreated" Mode="In" Type="DateTime" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+      <Parameter Name="empid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_USER_SelectAll" ReturnType="Collection(HRPortalModel.sp_USER_SelectAll_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="distributorCode" Mode="In" Type="String" />
+      <Parameter Name="companyID" Mode="In" Type="Int32" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Int32" />
+      <Parameter Name="insertBy" Mode="In" Type="Int32" />
+      <Parameter Name="insertionDate" Mode="In" Type="DateTime" />
+      <Parameter Name="PageNum" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="sortColumn" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="TotalRowsNum" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_Attendance_Employee_SelectALL_Result">
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="70" />
+    <Property Type="Int32" Name="Attendance_Id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Completed_ProjectFOrEmployee_Result">
+    <Property Type="Int32" Name="Project_Id" Nullable="false" />
+    <Property Type="Int32" Name="Client_id" Nullable="true" />
+    <Property Type="Int32" Name="Project_Type" Nullable="true" />
+    <Property Type="Int32" Name="Resource_Id" Nullable="true" />
+    <Property Type="Int32" Name="Department_ID" Nullable="true" />
+    <Property Type="String" Name="Project_Name" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Work_Date" Nullable="true" />
+    <Property Type="String" Name="Task_Description" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="Employee_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Budget_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allocated_time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Start_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="End_Time" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Total_spend_Time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Actual_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Varrience" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+    <Property Type="Int32" Name="U_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Designation_GetAll_Result">
+    <Property Type="Int32" Name="DesignationID" Nullable="false" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="30" />
+    <Property Type="Boolean" Name="isActive" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Employee_Type_SelectAll_Result">
+    <Property Type="Int32" Name="EmployeeTypeID" Nullable="false" />
+    <Property Type="String" Name="EmployeeType" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="30" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_Employees_GetAll_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="EmployeType_Id" Nullable="false" />
+    <Property Type="Int32" Name="LastEducation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Designation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Department_Id" Nullable="false" />
+    <Property Type="Int32" Name="Reference_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_id" Nullable="true" />
+    <Property Type="Int32" Name="Balance_Id" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Govt_ID" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="SSN_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Driving_License_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Image_path" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="String" Name="Deputation_Location" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEducationDate" Nullable="true" />
+    <Property Type="String" Name="LastEmployer_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="LastEmployer_Add" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="LastEmployer_Contact" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEmployer_FromDate" Nullable="true" />
+    <Property Type="DateTime" Name="LastEmployer_ToDate" Nullable="true" />
+    <Property Type="String" Name="HomeAddress" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Home_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Relationship" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ModeOfTraveling" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="VehichleNo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="U_id" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Decimal" Name="BaseSalary" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce3" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalSalary" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="LeaveBalnces" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="BankAccountNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Attendance_Id" Nullable="true" />
+    <Property Type="String" Name="Last_Institue_Name" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="EmployeeType" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_Employees_SelectOne_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="EmployeType_Id" Nullable="false" />
+    <Property Type="Int32" Name="LastEducation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Designation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Department_Id" Nullable="false" />
+    <Property Type="Int32" Name="Reference_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_id" Nullable="true" />
+    <Property Type="Int32" Name="Balance_Id" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Govt_ID" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="SSN_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Driving_License_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Image_path" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="String" Name="Deputation_Location" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEducationDate" Nullable="true" />
+    <Property Type="String" Name="LastEmployer_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="LastEmployer_Add" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="LastEmployer_Contact" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEmployer_FromDate" Nullable="true" />
+    <Property Type="DateTime" Name="LastEmployer_ToDate" Nullable="true" />
+    <Property Type="String" Name="HomeAddress" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Home_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Relationship" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ModeOfTraveling" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="VehichleNo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="U_id" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Decimal" Name="BaseSalary" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce3" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalSalary" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="LeaveBalnces" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="BankAccountNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Attendance_Id" Nullable="true" />
+    <Property Type="String" Name="Last_Institue_Name" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_Empworking_GetStartDate_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="projectid" Nullable="true" />
+    <Property Type="Int32" Name="employeeid" Nullable="true" />
+    <Property Type="DateTime" Name="starttime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="endtime" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="totaltime" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsCompleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Get_Employee_Attendance_Result">
+    <Property Type="DateTime" Name="Attendance_Date" Nullable="false" />
+    <Property Type="Time" Name="Time_In" Nullable="false" />
+    <Property Type="Time" Name="Time_Out" Nullable="false" />
+    <Property Type="Decimal" Name="Total_hours" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Employee_id" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllClients_Result">
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="String" Name="Client_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_Mobile" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_Address" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="70" />
+    <Property Type="Int32" Name="User_Id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllDepartments_Result">
+    <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="Department_Name" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllUsers_Result">
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Project_Selct_One_Result">
+    <Property Type="Int32" Name="Project_Id" Nullable="false" />
+    <Property Type="Int32" Name="Client_id" Nullable="true" />
+    <Property Type="Int32" Name="Project_Type" Nullable="true" />
+    <Property Type="Int32" Name="Resource_Id" Nullable="true" />
+    <Property Type="Int32" Name="Department_ID" Nullable="true" />
+    <Property Type="String" Name="Project_Name" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Work_Date" Nullable="true" />
+    <Property Type="String" Name="Task_Description" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="Employee_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Budget_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allocated_time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Start_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="End_Time" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Total_spend_Time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Actual_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Varrience" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+    <Property Type="Int32" Name="U_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Project_Type_SelectAll_Result">
+    <Property Type="Int32" Name="ProjectTypeId" Nullable="false" />
+    <Property Type="String" Name="ProjectType" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Projects_Assigned_InProgress_projects_Resource_Result">
+    <Property Type="Int32" Name="Project_Id" Nullable="false" />
+    <Property Type="Int32" Name="Client_id" Nullable="true" />
+    <Property Type="Int32" Name="Project_Type" Nullable="true" />
+    <Property Type="Int32" Name="Resource_Id" Nullable="true" />
+    <Property Type="Int32" Name="Department_ID" Nullable="true" />
+    <Property Type="String" Name="Project_Name" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Work_Date" Nullable="true" />
+    <Property Type="String" Name="Task_Description" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="Employee_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Budget_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allocated_time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Start_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="End_Time" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Total_spend_Time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Actual_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Varrience" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+    <Property Type="Int32" Name="U_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Projects_SelectAll_Result">
+    <Property Type="Int32" Name="Project_Id" Nullable="false" />
+    <Property Type="Int32" Name="Client_id" Nullable="true" />
+    <Property Type="Int32" Name="Project_Type" Nullable="true" />
+    <Property Type="Int32" Name="Resource_Id" Nullable="true" />
+    <Property Type="Int32" Name="Department_ID" Nullable="true" />
+    <Property Type="String" Name="Project_Name" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Work_Date" Nullable="true" />
+    <Property Type="String" Name="Task_Description" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="Employee_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Budget_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allocated_time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Start_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="End_Time" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Total_spend_Time" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Actual_Cost" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Varrience" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+    <Property Type="Int32" Name="U_id" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="EmployeType_Id" Nullable="false" />
+    <Property Type="Int32" Name="LastEducation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Designation_Id" Nullable="false" />
+    <Property Type="Int32" Name="Department_Id1" Nullable="false" />
+    <Property Type="Int32" Name="Reference_Id" Nullable="false" />
+    <Property Type="Int32" Name="Salary_id" Nullable="true" />
+    <Property Type="Int32" Name="Balance_Id" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Govt_ID" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="SSN_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Driving_License_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Image_path" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="String" Name="Deputation_Location" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEducationDate" Nullable="true" />
+    <Property Type="String" Name="LastEmployer_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="LastEmployer_Add" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="LastEmployer_Contact" Nullable="true" MaxLength="70" />
+    <Property Type="DateTime" Name="LastEmployer_FromDate" Nullable="true" />
+    <Property Type="DateTime" Name="LastEmployer_ToDate" Nullable="true" />
+    <Property Type="String" Name="HomeAddress" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Home_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_ContactNo" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Emergency_Person_Relationship" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="BloodGroup" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ModeOfTraveling" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="VehichleNo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Status1" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="U_id1" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Decimal" Name="BaseSalary" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Allownce3" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalSalary" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="LeaveBalnces" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Benefit2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="BankAccountNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Attendance_Id" Nullable="true" />
+    <Property Type="String" Name="Last_Institue_Name" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="String" Name="Client_Name" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_No" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_Mobile" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Client_Address" Nullable="true" MaxLength="Max" />
+    <Property Type="Boolean" Name="IsActive1" Nullable="true" />
+    <Property Type="String" Name="Status2" Nullable="true" MaxLength="70" />
+    <Property Type="Int32" Name="User_Id" Nullable="true" />
+    <Property Type="String" Name="projectstatus" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="ActualCost" Nullable="true" Precision="37" Scale="4" />
+    <Property Type="Decimal" Name="Varience" Nullable="true" Precision="38" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="sp_Role_GetAll_Result">
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="70" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SelectOne_Result">
+    <Property Type="Int32" Name="EmployeeTypeID" Nullable="false" />
+    <Property Type="String" Name="EmployeeType" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="30" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_USER_SelectAll_Result">
+    <Property Type="Int64" Name="RowNumber" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="RoleId" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+  </ComplexType>
+</Schema>

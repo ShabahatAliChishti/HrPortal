@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+
+@*<div class="card-body">*@
+    @*<form id="frm-example" method="POST">*@
+        <table id="example" class="table table-bordered table-striped" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    
+                    <th>Start Date</th>
+                    <th>Expected Date</th>
+                    <th>Actual End Date</th>
+                    <th>project Status</th>
+                    <th>Budget Cost</th>
+                    <th>Actual Cost</th>
+                    <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+
+    @*</form>*@
+@*</div>*@
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+
+      //  [{ "Project_Id": 1, "Project_Name": "Sos Project Testing 1", "Estimated_Budget": 10000.0, "ProjectLeader": "Talha Faraz", "ProjectVariance": 9998.1667, "Start_Date": "2019-11-29T00:00:00", "Expected_Completed_Date": "2019-12-08T00:00:00", "NoOfMilestones": 3, "ProjectStatus": "Completed", "ActualCost": 1.8333, "ProjectEndDate": "27/11/2019" }]
+
+        console.log(@Html.Raw(@ViewBag.FooObj));
+
+        var table = $('#example').DataTable({
+            data:@Html.Raw(@ViewBag.FooObj),
+            "columnDefs": [
+          { "width": "10%", "targets": 0 },
+          { "width": "10%", "targets": 1 },
+          { "width": "10%", "targets": 2 },
+          { "width": "10%", "targets": 3 },
+          { "width": "10%", "targets": 4 },
+          { "width": "10%", "targets": 5 },
+          { "width": "10%", "targets": 6 },
+       
+            ],
+            columns: [
+
+                { data: 'Project_Name' },
+                 
+                 { data: 'Start_Date' },
+                 { data: 'Expected_Completed_Date' },
+                 { data: 'ProjectEndDate' },
+                 { data: 'ProjectStatus' },
+                 { data: 'Estimated_Budget' },
+                 { data: 'ActualCost' },
+                 { data: 'ProjectVariance' },
+            ]
+        });
+
+
+
+        //docmnt ready
+    });
+
+
+</script>
+

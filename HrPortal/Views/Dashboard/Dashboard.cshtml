@@ -1,0 +1,319 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Dashboard</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+@{
+    if (Session["RoleID"] != null && Session["RoleID"].ToString() == "1")
+    {
+
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div id="menuList" class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box ">
+                                <div class="">
+
+                                   <a href="/Dashboard/Dashboard2"><img class="img-fluid" src="~/dist/img/credit/hr-module.png" /></a> 
+                                </div>
+                                <div class="icon">
+                                    <i class=""></i>
+                                </div>
+                                <a href="/Dashboard/Dashboard2" id="parentmenuEmployee" data-val="1" class="small-box-footer">HR Module</a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box">
+                                <div class="">
+
+                                    <a href="/Dashboard/Dashboard3"><img class="img-fluid" src="~/dist/img/credit/payroll-module.png" /></a>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="/Dashboard/Dashboard3" id="parentmenuPayroll" data-val="1" class="small-box-footer">Payroll Module</a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box">
+                                <div class="">
+
+                                    <a href="/Dashboard/Dashboard4"><img class="img-fluid" src="~/dist/img/credit/attendance.png" /></a> 
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="/Dashboard/Dashboard4" id="parentmenuAttendance" data-val="1" class="small-box-footer">Attendance</a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box">
+                                <div class="">
+
+                                    <a href="/Dashboard/Dashboard5"><img class="img-fluid" src="~/dist/img/credit/admin-module.png" /></a>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="/Dashboard/Dashboard5" id="parentmenuAdmin" data-val="1" class="small-box-footer">Admin Module</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box ">
+                                <div class="">
+
+                                    <a href="/Dashboard/Dashboard6"> <img class="img-fluid" src="~/dist/img/credit/project-module.png" /></a> 
+                                </div>
+                                <div class="icon">
+                                    <i class=""></i>
+                                </div>
+                                <a href="/Dashboard/Dashboard6" id="parentmenuProject" data-val="1" class="small-box-footer">Project Module</a>
+                            </div>
+                        </div>
+
+                       <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box">
+                            <div class="">
+
+                                <a href="/Dashboard/Dashboard7"><img class="img-fluid" src="~/dist/img/credit/attendance.png" /></a> 
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="/Dashboard/Dashboard7" id="parentmenuLeave" data-val="1" class="small-box-footer">Leave management</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+                <div id="Childmenu" style="display:none" class="row">
+                    <div class="col-lg-3">
+                        <!-- small box -->
+                        <div class="small-box ">
+                            <div class="">
+
+                                <img class="img-fluid" src="~/dist/img/credit/hr-module.png" />
+                            </div>
+                            <div class="icon">
+                                <i class=""></i>
+                            </div>
+                            <a href="#" id="parentmenuEmployee" data-val="1" class="small-box-footer">HR Module</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3">
+                        <!-- small box -->
+                        <div class="small-box">
+                            <div class="">
+
+                                <img class="img-fluid" src="~/dist/img/credit/payroll-module.png" />
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Payroll Module</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3">
+                        <!-- small box -->
+                        <div class="small-box">
+                            <div class="">
+
+                                <img class="img-fluid" src="~/dist/img/credit/attendance.png" />
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Attendance</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    }
+    else
+    {
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3></h3>
+                                <p>Project</p>
+                            </div>
+                            <div class="icon">
+                                <i class=""></i>
+                            </div>
+                            <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3><sup style="font-size: 20px"></sup></h3>
+
+                                <p>Employee Management</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3></h3>
+
+                                <p>Attendance Management</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3></h3>
+
+                                <p>Leave Management</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+
+            </div>
+        </section>
+    }
+}
+
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Dashboard/GetMenus",
+                success: function (data) {
+                    console.log(data.data);
+                   // BindParentMenus(JSON.parse(data.data));
+                }
+            });
+
+            //show popup
+
+
+            //add customer button event
+
+            function BindParentMenus(data) {
+
+                for (var i = 0; i < data.length; i++) {
+
+                    var div = "";
+                    div = '<div class="col-lg-3 col-6"><div class="small-box bg-info">';
+                    div = div + '<div class="inner" id="imagediv">';
+                    div = div + '<img class="img-fluid" src="' + data[i].Image_Path + '" /></div>';
+                    div = div + '<div class="icon"><i class=""></i></div>';
+                    div = div + '<a href="#" id="parentmenuEmployee" data-val="'+data[i].ID+'" class="small-box-footer">' + data[i].MenuName + '</a></div></div>';
+
+
+
+                    $("#menuList").append(div);
+                    
+                }
+
+            }
+
+            
+
+            
+        });
+
+        
+            $(document).on('clic', '#parentmenuEmployee', function () {
+
+                var parntid = $(this).attr('data-val');
+                $("#menuList").css("display", "none");
+                Childmenu
+                $("#Childmenu").css("display", "block");
+                //$("#menuList").empty();
+                $.ajax({
+                    url: "/Dashboard/GetChildMenu?id=" + parntid,
+                    success: function (data) {
+                        console.log(data.data);
+                       // BindChildMenus(JSON.parse(data.data));
+                    }
+                });
+
+
+            });
+        
+            function BindChildMenus(data) {
+
+                for (var i = 0; i < data.length; i++) {
+
+                    var div = "";
+                    div = '<div class="col-lg-3 col-6"><div class="small-box bg-info">';
+                    div = div + '<div class="inner" id="imagediv">';
+                    div = div + '<img class="img-fluid" src="' + data[i].Image_Path + '" /></div>';
+                    div = div + '<div class="icon"><i class=""></i></div>';
+                    div = div + '<a href="' + data[i].Page_Link + '"  class="small-box-footer">' + data[i].MenuName + '</a></div></div>';
+
+
+
+                    $("#menuList").append(div);
+
+                }
+
+            }
+    </script>
+}
+

@@ -1,0 +1,311 @@
+﻿
+@{
+    ViewBag.Title = "ViewEmployeeType";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>View Employee Type</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">EmployeeType</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><button class="btn btn-primary" data-toggle="modal" data-target="#modal-default" id="btnaddemployeetype">Add Employee Type</button></h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" width="100%">
+                    <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Employee Type</th>
+                                <th>Status</th>
+                                <th>Date Created</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<div class="modal fade" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Employee Type</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnaddnewemptype" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- /.modal -->
+<!-- ./wrapper -->
+
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/EmployeeType/getEmployeeType",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnaddemployeetype").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+
+                $("#modelbody").load("/EmployeeType/AddEmployeeType", function (e) {
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //add customer button event
+            $("#btnaddnewemptype").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formadddemptype");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/EmployeeType/AddEmployeeType",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/EmployeeType/ViewEmployeeType"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                console.log(JSON.parse(data.emptype));
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.emptype),
+                    columns: [
+                        { data: 'EmployeeType' },
+                        { data: 'Status' },
+                        {
+                            "data": "DateCreated",
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+                        //{ data: 'DateCreated' },//or { data: 'MONTH', title: 'Month' }`
+
+                        {
+                            //"data": function (data, type, dataToSet) {
+
+                            //    if (data.Is_Active) {
+
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                            //    }
+                            //    else {
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                            //    }
+
+                              //  return data.Status + "<br/>" + data.Name;
+                            "data": "EmployeeTypeID",
+                            "render": function (EmployeeTypeID, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + EmployeeTypeID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + EmployeeTypeID + ')"><i class="fa fa-trash"></i></a>'
+
+                        },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowCustomer(CustomerID) {
+
+            var url = "/EmployeeType/ShowEmployeeType?Id=" + CustomerID;
+
+            $("#modelbody").load(url, function (e) {
+                var id = $('#Customer_Id').val();
+                if (id > 0) {
+                    $('#btnaddnewemptype').html("update ");
+                }
+                $("#modal-default").modal("show");
+            });
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Block!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/EmployeeType/DeleteEmployeeType?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/EmployeeType/ViewEmployeeType"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failed',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+    </script>
+}
+
+
+
+

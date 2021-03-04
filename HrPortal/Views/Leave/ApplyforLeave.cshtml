@@ -1,0 +1,262 @@
+﻿@model HrProperty.Models.Leaves
+
+
+@{
+    ViewBag.Title = "ApplyforLeave";
+}
+
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Employees</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Leaves</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- /.card -->
+
+                <div class="card">
+
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="table-responsive mg-t-25">
+                            <table id="" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Casual Leaves</th>
+                                        <th>Annual Leaves</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach (var emp in ViewBag.EmployeeInfo)
+                                        {
+                                            <td>@emp.Casual_Leaves</td>
+                                            <input type="hidden" id="casualleves" value="@emp.Casual_Leaves" />
+                                            <td>@emp.Annual_Leaves</td>
+                                            <input type="hidden" id="annualleaves" value="@emp.Annual_Leaves" />
+                                        }
+                                       
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- left column -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- general form elements disabled -->
+                <div>
+                    <div class="card-header">
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form id="leaveform">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Leave Type</label>
+                                        @Html.DropDownListFor(model => model.LeaveType, new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "Casual", Value="1"},
+                        new SelectListItem() {Text = "Annual", Value="2"}
+
+                        },
+                        new { @Class = "form-control font-weight-bold" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>From</label>
+                                        @Html.EditorFor(model => model.Leave_From, new { htmlAttributes = new { @placeholder = "Leave From", @class = "form-control", @id = "txtboxleavefrom" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Leave_From, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>To</label>
+                                        @Html.EditorFor(model => model.Leave_To, new { htmlAttributes = new { @placeholder = "Leave From", @class = "form-control", @id = "txtboxleavefrom" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Leave_To, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>No Of Days</label>
+                                        @Html.EditorFor(model => model.TotalDays, new { htmlAttributes = new { @placeholder = "Total Days", @class = "form-control", @id = "txtboxleavedays" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.TotalDays, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Remarks</label>
+                                        @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @placeholder = "Remarks", @class = "form-control", @id = "txtboxleavefrom" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+
+                                    <input type="button" class="btn btn-primary form-control" value="Apply For Leave" id="btnapply" />
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section MyScripts{
+    <script type="text/javascript">
+
+        $("#btnapply").click(function (e) {
+            var casualleaves = $("#casualleves").val();
+            var annualleaves = $("#annualleaves").val();
+            var totaldays = $("#txtboxleavedays").val();
+            var selectedleave = $("#LeaveType").val();
+
+            if (selectedleave == 1 && totaldays > casualleaves) {
+                alert('Sorry You dont have Enough Leaves');
+                return;
+            }
+            if (selectedleave == 2 && totaldays > annualleaves) {
+                alert('Sorry You dont have Enough Leaves');
+                return;
+            }
+
+
+            e.preventDefault();
+            //var form = $("#employeeform");
+
+            var form = $('#leaveform')[0];
+
+            var formdata = new FormData(form);
+
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Leave/ApplyLeave",
+                    data: formdata,// abc,//JSON.stringify({ empployeepropertys: formdata, depandant: depndntarray }),// { empployeepropertys: formdata, depandant: JSON.stringify(depndntarray) },//formdata,
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.Success) {
+                            Command: toastr["success"]("", "Added Successfuly")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                            window.location.href = "/Leave/ApplyForLeave"
+                        }
+                        else if (res.success == false && res.msg == 'Failed') {
+                                Command: toastr["error"]("Invalid ", " Failed")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+
+                })
+            }
+            else {
+                return false;
+            }
+
+        });
+
+
+    </script>
+
+}

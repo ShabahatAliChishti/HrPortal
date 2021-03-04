@@ -1,0 +1,70 @@
+﻿@model HrProperty.Models.Designation_Property
+@{
+    Layout = null;
+}
+
+
+
+@if (ViewBag.Customer == null)
+{
+    <div class="card-body">
+        <form role="form" id="formadddesignation">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Designation</label>
+                        @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @placeholder = "Designation Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+
+
+                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+
+
+                </div>
+                @Html.HiddenFor(model => model.Designation_Id, new { id = "natureOfVisitField", value = 0})
+                @*<div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                        </div>
+                        <br />
+                        @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                    </div>*@
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    foreach (var cstmr in ViewBag.Customer)
+    {
+        <div class="card-body">
+            <form role="form" id="formadddesignation">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Customer Code</label>
+
+                            @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { Value = cstmr.Code, @readonly = "readonly", @class = "form-control", @id = "txtboxcustomercode" } })
+
+
+                            @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                        </div>
+                    </div>
+                    @*<div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Customer Name</label>
+                                @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { Value = cstmr.Name, @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                            </div>
+                            <br />
+                            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                        </div>*@
+                </div>
+
+            </form>
+        </div>
+    }
+}

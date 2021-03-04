@@ -1,0 +1,275 @@
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ApplicationInsights.config
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\csc.exe
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\System.Collections.Immutable.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\System.Reflection.Metadata.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\vbc.exe
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe.config
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\HrPortal.dll.config
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\HrPortal.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\HrPortal.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.DependencyCollector.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.Web.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.WindowsServer.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.ApplicationInsights.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.Web.Infrastructure.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Helpers.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Mvc.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Razor.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.Deployment.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.Razor.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.DependencyCollector.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.Web.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.AI.WindowsServer.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.ApplicationInsights.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Razor.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.Deployment.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Webpages.Razor.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Helpers.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\System.Web.Mvc.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\obj\Release\HrPortal.csprojResolveAssemblyReference.cache
+E:\Talha\Main Projects\HrPortal\HrPortal\obj\Release\HrPortal.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\obj\Release\HrPortal.pdb
+D:\Umer\HrPortal\Project\HrPortal\bin\ApplicationInsights.config
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\csc.exe
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\vbc.exe
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\VBCSCompiler.exe
+D:\Umer\HrPortal\Project\HrPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\Umer\HrPortal\Project\HrPortal\bin\HrPortal.dll.config
+D:\Umer\HrPortal\Project\HrPortal\bin\HrPortal.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\HrPortal.pdb
+D:\Umer\HrPortal\Project\HrPortal\bin\BLL.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\EntityFramework.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\HrProperty.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.DependencyCollector.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.Web.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.WindowsServer.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.ApplicationInsights.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\Newtonsoft.Json.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Helpers.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Mvc.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Razor.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.Deployment.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.Razor.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\DAL.dll
+D:\Umer\HrPortal\Project\HrPortal\bin\BLL.pdb
+D:\Umer\HrPortal\Project\HrPortal\bin\HrProperty.pdb
+D:\Umer\HrPortal\Project\HrPortal\bin\EntityFramework.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.DependencyCollector.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.Web.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.AI.WindowsServer.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.ApplicationInsights.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\Newtonsoft.Json.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Razor.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.Deployment.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Webpages.Razor.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Helpers.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\System.Web.Mvc.xml
+D:\Umer\HrPortal\Project\HrPortal\bin\DAL.pdb
+D:\Umer\HrPortal\Project\HrPortal\obj\Release\HrPortal.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\Project\HrPortal\obj\Release\HrPortal.dll
+D:\Umer\HrPortal\Project\HrPortal\obj\Release\HrPortal.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ApplicationInsights.config
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\csc.exe
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\vbc.exe
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\VBCSCompiler.exe
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\HrPortal.dll.config
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\HrPortal.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\HrPortal.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.DataSet.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.DependencyCollector.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.Web.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.WindowsServer.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.ApplicationInsights.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Newtonsoft.Json.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Helpers.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Mvc.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Razor.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.Deployment.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.Razor.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.DataSet.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\ExcelDataReader.DataSet.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.DependencyCollector.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.Web.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.AI.WindowsServer.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.ApplicationInsights.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\Newtonsoft.Json.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Razor.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.Deployment.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Webpages.Razor.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Helpers.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\System.Web.Mvc.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\bin\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\obj\Release\HrPortal.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\obj\Release\HrPortal.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\obj\Release\HrPortal.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\BLL.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\EntityFramework.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\HrProperty.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Newtonsoft.Json.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\DAL.dll
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\BLL.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\HrProperty.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\EntityFramework.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.pdb
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\Newtonsoft.Json.xml
+E:\Talha\Main Projects\HrPortal\HrPortal\bin\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\obj\Release\RdlCompile.cache
+D:\Umer\HrPortal\HRPortalSystem\Project\HrPortal\obj\Release\RdlCompile.compiled
+E:\Talha\Main Projects\HrPortal\HrPortal\obj\Release\RdlCompile.cache
+E:\Talha\Main Projects\HrPortal\HrPortal\obj\Release\RdlCompile.compiled
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ApplicationInsights.config
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\csc.exe
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\vbc.exe
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\HrPortal.dll.config
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\HrPortal.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\HrPortal.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\BLL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.DependencyCollector.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.Web.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.WindowsServer.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.ApplicationInsights.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Newtonsoft.Json.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Helpers.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Mvc.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Razor.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.Deployment.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.Razor.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\BLL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\ExcelDataReader.DataSet.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.DependencyCollector.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.Web.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.AI.WindowsServer.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.ApplicationInsights.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\Newtonsoft.Json.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Razor.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.Deployment.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Webpages.Razor.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Helpers.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\System.Web.Mvc.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\bin\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\obj\Release\HrPortal.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\obj\Release\RdlCompile.cache
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\obj\Release\RdlCompile.compiled
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\obj\Release\HrPortal.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\HrPortal\obj\Release\HrPortal.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\ApplicationInsights.config
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\csc.exe
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\vbc.exe
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\HrPortal.dll.config
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\HrPortal.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\HrPortal.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\BLL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\HrProperty.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\BLL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\HrProperty.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\bin\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\obj\Release\HrPortal.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\obj\Release\RdlCompile.cache
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\obj\Release\RdlCompile.compiled
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\obj\Release\HrPortal.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\HrPortal\obj\Release\HrPortal.pdb

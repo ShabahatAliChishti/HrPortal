@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "ViewMilesStoneTasks";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Tasks</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Task List</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- /.card -->
+
+            <div class="card">
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Task Name</th>
+                                <th>MileStone Name</th>
+                                <th>Resource Name</th>
+                                <th>Allocated Time</th>
+                                <th>Actual Completed Time</th>
+                                <th>Status</th>
+                                @*<th>Actions</th>*@
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<div class="modal fade full-width-div" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Task Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                @*<button type="button" id="btnaddnewemptype" class="btn btn-primary">Save changes</button>*@
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<style>
+    .full-width-div {
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+</style>
+
+@*<aside class="control-sidebar control-sidebar-dark">
+         Control sidebar content goes here
+    </aside>*@
+
+<!-- page script -->
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            bindCustomersInDataTable(@Html.Raw(ViewBag.Tasklist));
+
+
+
+
+        });
+
+        function bindCustomersInDataTable(data) {
+
+            console.log(data);
+
+            console.log(JSON.stringify(data));
+            var status = "Blocked".toString();
+            var table = $('#example1').DataTable({
+                data:data,// JSON.parse(data),
+                columns: [
+                    { data: 'Project_Name' },
+                    { data: 'TimeLineName' },
+                    { data: 'EmployeeName' },
+                    { data: 'Allocated_time' },
+                    { data: 'Total_spend_Time' },
+                    { data: 'taskStatus' },
+                    //{
+                    //    "data": "taskid",
+                    //    "render": function (taskid, type, full, meta) {
+
+                    //        return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + taskid + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ProjectMileStone(' + taskid + ')"><i class="fa">Task Details</i></a>'
+
+                    //    },
+                    //    "orderable": true,
+                    //    "searchable": true,
+
+
+                    //}
+                ]
+            });
+
+        }
+
+       
+
+    </script>
+}
+
+
+
+
+

@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRPortalModelStoreContainer" CdmEntityContainer="HRPortalEntities1">
+    <EntitySetMapping Name="RECORDHISTORies">
+      <EntityTypeMapping TypeName="HRPortalModel.RECORDHISTORY">
+        <MappingFragment StoreEntitySet="RECORDHISTORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Record_Table_Name" ColumnName="Record_Table_Name" />
+          <ScalarProperty Name="Record_Id" ColumnName="Record_Id" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="Operated_By" ColumnName="Operated_By" />
+          <ScalarProperty Name="Operation_Date" ColumnName="Operation_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Attendance">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Attendance">
+        <MappingFragment StoreEntitySet="tbl_Attendance">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="Attendance_Date" ColumnName="Attendance_Date" />
+          <ScalarProperty Name="Time_In" ColumnName="Time_In" />
+          <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+          <ScalarProperty Name="Total_hours" ColumnName="Total_hours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Employee">
+        <MappingFragment StoreEntitySet="tbl_Employee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeType_Id" ColumnName="EmployeType_Id" />
+          <ScalarProperty Name="LastEducation_Id" ColumnName="LastEducation_Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Reference_Id" ColumnName="Reference_Id" />
+          <ScalarProperty Name="Salary_id" ColumnName="Salary_id" />
+          <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Govt_ID" ColumnName="Govt_ID" />
+          <ScalarProperty Name="SSN_No" ColumnName="SSN_No" />
+          <ScalarProperty Name="Driving_License_No" ColumnName="Driving_License_No" />
+          <ScalarProperty Name="Image_path" ColumnName="Image_path" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Deputation_Location" ColumnName="Deputation_Location" />
+          <ScalarProperty Name="LastEducationDate" ColumnName="LastEducationDate" />
+          <ScalarProperty Name="LastEmployer_Name" ColumnName="LastEmployer_Name" />
+          <ScalarProperty Name="LastEmployer_Add" ColumnName="LastEmployer_Add" />
+          <ScalarProperty Name="LastEmployer_Contact" ColumnName="LastEmployer_Contact" />
+          <ScalarProperty Name="LastEmployer_FromDate" ColumnName="LastEmployer_FromDate" />
+          <ScalarProperty Name="LastEmployer_ToDate" ColumnName="LastEmployer_ToDate" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="Home_ContactNo" ColumnName="Home_ContactNo" />
+          <ScalarProperty Name="Emergency_ContactNo" ColumnName="Emergency_ContactNo" />
+          <ScalarProperty Name="Emergency_Person_Name" ColumnName="Emergency_Person_Name" />
+          <ScalarProperty Name="Emergency_Person_Relationship" ColumnName="Emergency_Person_Relationship" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="ModeOfTraveling" ColumnName="ModeOfTraveling" />
+          <ScalarProperty Name="VehichleNo" ColumnName="VehichleNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+          <ScalarProperty Name="Allownce1" ColumnName="Allownce1" />
+          <ScalarProperty Name="Allownce2" ColumnName="Allownce2" />
+          <ScalarProperty Name="Allownce3" ColumnName="Allownce3" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="LeaveBalnces" ColumnName="LeaveBalnces" />
+          <ScalarProperty Name="Benefit1" ColumnName="Benefit1" />
+          <ScalarProperty Name="Benefit2" ColumnName="Benefit2" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="Attendance_Id" ColumnName="Attendance_Id" />
+          <ScalarProperty Name="Last_Institue_Name" ColumnName="Last_Institue_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Holidays">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Holidays">
+        <MappingFragment StoreEntitySet="tbl_Holidays">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="holiday_month" ColumnName="holiday_month" />
+          <ScalarProperty Name="holiday_year" ColumnName="holiday_year" />
+          <ScalarProperty Name="holiday" ColumnName="holiday" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Project">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Project">
+        <MappingFragment StoreEntitySet="tbl_Project">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Client_id" ColumnName="Client_id" />
+          <ScalarProperty Name="Project_Type" ColumnName="Project_Type" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Task_Description" ColumnName="Task_Description" />
+          <ScalarProperty Name="Employee_Cost" ColumnName="Employee_Cost" />
+          <ScalarProperty Name="Budget_Cost" ColumnName="Budget_Cost" />
+          <ScalarProperty Name="Allocated_time" ColumnName="Allocated_time" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+          <ScalarProperty Name="Total_spend_Time" ColumnName="Total_spend_Time" />
+          <ScalarProperty Name="Actual_Cost" ColumnName="Actual_Cost" />
+          <ScalarProperty Name="Varrience" ColumnName="Varrience" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Project_Employee_Working_hours">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Project_Employee_Working_hours">
+        <MappingFragment StoreEntitySet="tbl_Project_Employee_Working_hours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="totaltime" ColumnName="totaltime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Projects">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Projects">
+        <MappingFragment StoreEntitySet="tbl_Projects">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Project_Type_Id" ColumnName="Project_Type_Id" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Project_Description" ColumnName="Project_Description" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Estimated_Budget" ColumnName="Estimated_Budget" />
+          <ScalarProperty Name="Actual_Budget" ColumnName="Actual_Budget" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Last_Updated_Date" ColumnName="Last_Updated_Date" />
+          <ScalarProperty Name="Last_Updated_By" ColumnName="Last_Updated_By" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="In_Progress" ColumnName="In_Progress" />
+          <ScalarProperty Name="IS_Completed" ColumnName="IS_Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Role">
+      <EntityTypeMapping TypeName="HRPortalModel.tbl_Role">
+        <MappingFragment StoreEntitySet="tbl_Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClients">
+      <EntityTypeMapping TypeName="HRPortalModel.tblClient">
+        <MappingFragment StoreEntitySet="tblClient">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Client_No" ColumnName="Client_No" />
+          <ScalarProperty Name="Client_Mobile" ColumnName="Client_Mobile" />
+          <ScalarProperty Name="Client_Address" ColumnName="Client_Address" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="HRPortalModel.tblDepartment">
+        <MappingFragment StoreEntitySet="tblDepartment">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDesignations">
+      <EntityTypeMapping TypeName="HRPortalModel.tblDesignation">
+        <MappingFragment StoreEntitySet="tblDesignation">
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployeeTypes">
+      <EntityTypeMapping TypeName="HRPortalModel.tblEmployeeType">
+        <MappingFragment StoreEntitySet="tblEmployeeType">
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjectTypes">
+      <EntityTypeMapping TypeName="HRPortalModel.tblProjectType">
+        <MappingFragment StoreEntitySet="tblProjectType">
+          <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="HRPortalModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="HRPortalModel.Store.fnSplitter" FunctionImportName="fnSplitter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.fnSplitter_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Attendance_Employee_SelectALL" FunctionName="HRPortalModel.Store.sp_Attendance_Employee_SelectALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Attendance_Employee_SelectALL_Result">
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Attendance_Id" ColumnName="Attendance_Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Attendance_Insert" FunctionName="HRPortalModel.Store.sp_Attendance_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Client_Insert" FunctionName="HRPortalModel.Store.sp_Client_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Client_Update" FunctionName="HRPortalModel.Store.sp_Client_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Completed_ProjectFOrEmployee" FunctionName="HRPortalModel.Store.sp_Completed_ProjectFOrEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Completed_ProjectFOrEmployee_Result">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Client_id" ColumnName="Client_id" />
+          <ScalarProperty Name="Project_Type" ColumnName="Project_Type" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Task_Description" ColumnName="Task_Description" />
+          <ScalarProperty Name="Employee_Cost" ColumnName="Employee_Cost" />
+          <ScalarProperty Name="Budget_Cost" ColumnName="Budget_Cost" />
+          <ScalarProperty Name="Allocated_time" ColumnName="Allocated_time" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+          <ScalarProperty Name="Total_spend_Time" ColumnName="Total_spend_Time" />
+          <ScalarProperty Name="Actual_Cost" ColumnName="Actual_Cost" />
+          <ScalarProperty Name="Varrience" ColumnName="Varrience" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Department_Insert" FunctionName="HRPortalModel.Store.sp_Department_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Department_Update" FunctionName="HRPortalModel.Store.sp_Department_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Designation_GetAll" FunctionName="HRPortalModel.Store.sp_Designation_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Designation_GetAll_Result">
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Designation_Insert" FunctionName="HRPortalModel.Store.sp_Designation_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Designation_Update" FunctionName="HRPortalModel.Store.sp_Designation_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Employee_Attendance_SAlary_ByDate" FunctionName="HRPortalModel.Store.sp_Employee_Attendance_SAlary_ByDate" />
+    <FunctionImportMapping FunctionImportName="sp_Employee_Insert" FunctionName="HRPortalModel.Store.sp_Employee_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Employee_Type_Insert" FunctionName="HRPortalModel.Store.sp_Employee_Type_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Employee_Type_SelectAll" FunctionName="HRPortalModel.Store.sp_Employee_Type_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Employee_Type_SelectAll_Result">
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Employee_Update" FunctionName="HRPortalModel.Store.sp_Employee_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Employees_GetAll" FunctionName="HRPortalModel.Store.sp_Employees_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Employees_GetAll_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeType_Id" ColumnName="EmployeType_Id" />
+          <ScalarProperty Name="LastEducation_Id" ColumnName="LastEducation_Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Reference_Id" ColumnName="Reference_Id" />
+          <ScalarProperty Name="Salary_id" ColumnName="Salary_id" />
+          <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Govt_ID" ColumnName="Govt_ID" />
+          <ScalarProperty Name="SSN_No" ColumnName="SSN_No" />
+          <ScalarProperty Name="Driving_License_No" ColumnName="Driving_License_No" />
+          <ScalarProperty Name="Image_path" ColumnName="Image_path" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Deputation_Location" ColumnName="Deputation_Location" />
+          <ScalarProperty Name="LastEducationDate" ColumnName="LastEducationDate" />
+          <ScalarProperty Name="LastEmployer_Name" ColumnName="LastEmployer_Name" />
+          <ScalarProperty Name="LastEmployer_Add" ColumnName="LastEmployer_Add" />
+          <ScalarProperty Name="LastEmployer_Contact" ColumnName="LastEmployer_Contact" />
+          <ScalarProperty Name="LastEmployer_FromDate" ColumnName="LastEmployer_FromDate" />
+          <ScalarProperty Name="LastEmployer_ToDate" ColumnName="LastEmployer_ToDate" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="Home_ContactNo" ColumnName="Home_ContactNo" />
+          <ScalarProperty Name="Emergency_ContactNo" ColumnName="Emergency_ContactNo" />
+          <ScalarProperty Name="Emergency_Person_Name" ColumnName="Emergency_Person_Name" />
+          <ScalarProperty Name="Emergency_Person_Relationship" ColumnName="Emergency_Person_Relationship" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="ModeOfTraveling" ColumnName="ModeOfTraveling" />
+          <ScalarProperty Name="VehichleNo" ColumnName="VehichleNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+          <ScalarProperty Name="Allownce1" ColumnName="Allownce1" />
+          <ScalarProperty Name="Allownce2" ColumnName="Allownce2" />
+          <ScalarProperty Name="Allownce3" ColumnName="Allownce3" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="LeaveBalnces" ColumnName="LeaveBalnces" />
+          <ScalarProperty Name="Benefit1" ColumnName="Benefit1" />
+          <ScalarProperty Name="Benefit2" ColumnName="Benefit2" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="Attendance_Id" ColumnName="Attendance_Id" />
+          <ScalarProperty Name="Last_Institue_Name" ColumnName="Last_Institue_Name" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Employees_SelectOne" FunctionName="HRPortalModel.Store.sp_Employees_SelectOne">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Employees_SelectOne_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeType_Id" ColumnName="EmployeType_Id" />
+          <ScalarProperty Name="LastEducation_Id" ColumnName="LastEducation_Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Reference_Id" ColumnName="Reference_Id" />
+          <ScalarProperty Name="Salary_id" ColumnName="Salary_id" />
+          <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Govt_ID" ColumnName="Govt_ID" />
+          <ScalarProperty Name="SSN_No" ColumnName="SSN_No" />
+          <ScalarProperty Name="Driving_License_No" ColumnName="Driving_License_No" />
+          <ScalarProperty Name="Image_path" ColumnName="Image_path" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Deputation_Location" ColumnName="Deputation_Location" />
+          <ScalarProperty Name="LastEducationDate" ColumnName="LastEducationDate" />
+          <ScalarProperty Name="LastEmployer_Name" ColumnName="LastEmployer_Name" />
+          <ScalarProperty Name="LastEmployer_Add" ColumnName="LastEmployer_Add" />
+          <ScalarProperty Name="LastEmployer_Contact" ColumnName="LastEmployer_Contact" />
+          <ScalarProperty Name="LastEmployer_FromDate" ColumnName="LastEmployer_FromDate" />
+          <ScalarProperty Name="LastEmployer_ToDate" ColumnName="LastEmployer_ToDate" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="Home_ContactNo" ColumnName="Home_ContactNo" />
+          <ScalarProperty Name="Emergency_ContactNo" ColumnName="Emergency_ContactNo" />
+          <ScalarProperty Name="Emergency_Person_Name" ColumnName="Emergency_Person_Name" />
+          <ScalarProperty Name="Emergency_Person_Relationship" ColumnName="Emergency_Person_Relationship" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="ModeOfTraveling" ColumnName="ModeOfTraveling" />
+          <ScalarProperty Name="VehichleNo" ColumnName="VehichleNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+          <ScalarProperty Name="Allownce1" ColumnName="Allownce1" />
+          <ScalarProperty Name="Allownce2" ColumnName="Allownce2" />
+          <ScalarProperty Name="Allownce3" ColumnName="Allownce3" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="LeaveBalnces" ColumnName="LeaveBalnces" />
+          <ScalarProperty Name="Benefit1" ColumnName="Benefit1" />
+          <ScalarProperty Name="Benefit2" ColumnName="Benefit2" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="Attendance_Id" ColumnName="Attendance_Id" />
+          <ScalarProperty Name="Last_Institue_Name" ColumnName="Last_Institue_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_EmployeeType_Update" FunctionName="HRPortalModel.Store.sp_EmployeeType_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Empworking_GetStartDate" FunctionName="HRPortalModel.Store.sp_Empworking_GetStartDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Empworking_GetStartDate_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="totaltime" ColumnName="totaltime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Get_All_Payrolls" FunctionName="HRPortalModel.Store.sp_Get_All_Payrolls" />
+    <FunctionImportMapping FunctionImportName="sp_Get_Employee_Attendance" FunctionName="HRPortalModel.Store.sp_Get_Employee_Attendance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Get_Employee_Attendance_Result">
+          <ScalarProperty Name="Attendance_Date" ColumnName="Attendance_Date" />
+          <ScalarProperty Name="Time_In" ColumnName="Time_In" />
+          <ScalarProperty Name="Time_Out" ColumnName="Time_Out" />
+          <ScalarProperty Name="Total_hours" ColumnName="Total_hours" />
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllClients" FunctionName="HRPortalModel.Store.sp_GetAllClients">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_GetAllClients_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Client_No" ColumnName="Client_No" />
+          <ScalarProperty Name="Client_Mobile" ColumnName="Client_Mobile" />
+          <ScalarProperty Name="Client_Address" ColumnName="Client_Address" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllDepartments" FunctionName="HRPortalModel.Store.sp_GetAllDepartments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_GetAllDepartments_Result">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllUsers" FunctionName="HRPortalModel.Store.sp_GetAllUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_GetAllUsers_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetGeneralHolidays" FunctionName="HRPortalModel.Store.sp_GetGeneralHolidays" />
+    <FunctionImportMapping FunctionImportName="sp_Holidays_Insert" FunctionName="HRPortalModel.Store.sp_Holidays_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Project_Insert" FunctionName="HRPortalModel.Store.sp_Project_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Project_Insert_ByAdmin" FunctionName="HRPortalModel.Store.sp_Project_Insert_ByAdmin" />
+    <FunctionImportMapping FunctionImportName="sp_Project_Selct_One" FunctionName="HRPortalModel.Store.sp_Project_Selct_One">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Project_Selct_One_Result">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Client_id" ColumnName="Client_id" />
+          <ScalarProperty Name="Project_Type" ColumnName="Project_Type" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Task_Description" ColumnName="Task_Description" />
+          <ScalarProperty Name="Employee_Cost" ColumnName="Employee_Cost" />
+          <ScalarProperty Name="Budget_Cost" ColumnName="Budget_Cost" />
+          <ScalarProperty Name="Allocated_time" ColumnName="Allocated_time" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+          <ScalarProperty Name="Total_spend_Time" ColumnName="Total_spend_Time" />
+          <ScalarProperty Name="Actual_Cost" ColumnName="Actual_Cost" />
+          <ScalarProperty Name="Varrience" ColumnName="Varrience" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Project_Type_SelectAll" FunctionName="HRPortalModel.Store.sp_Project_Type_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Project_Type_SelectAll_Result">
+          <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProjectEmployeeWorkingHours_Insert" FunctionName="HRPortalModel.Store.sp_ProjectEmployeeWorkingHours_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Projects_Assigned_InProgress_projects_Resource" FunctionName="HRPortalModel.Store.sp_Projects_Assigned_InProgress_projects_Resource">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Projects_Assigned_InProgress_projects_Resource_Result">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Client_id" ColumnName="Client_id" />
+          <ScalarProperty Name="Project_Type" ColumnName="Project_Type" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Task_Description" ColumnName="Task_Description" />
+          <ScalarProperty Name="Employee_Cost" ColumnName="Employee_Cost" />
+          <ScalarProperty Name="Budget_Cost" ColumnName="Budget_Cost" />
+          <ScalarProperty Name="Allocated_time" ColumnName="Allocated_time" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+          <ScalarProperty Name="Total_spend_Time" ColumnName="Total_spend_Time" />
+          <ScalarProperty Name="Actual_Cost" ColumnName="Actual_Cost" />
+          <ScalarProperty Name="Varrience" ColumnName="Varrience" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Projects_SelectAll" FunctionName="HRPortalModel.Store.sp_Projects_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Projects_SelectAll_Result">
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Client_id" ColumnName="Client_id" />
+          <ScalarProperty Name="Project_Type" ColumnName="Project_Type" />
+          <ScalarProperty Name="Resource_Id" ColumnName="Resource_Id" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Task_Description" ColumnName="Task_Description" />
+          <ScalarProperty Name="Employee_Cost" ColumnName="Employee_Cost" />
+          <ScalarProperty Name="Budget_Cost" ColumnName="Budget_Cost" />
+          <ScalarProperty Name="Allocated_time" ColumnName="Allocated_time" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+          <ScalarProperty Name="Total_spend_Time" ColumnName="Total_spend_Time" />
+          <ScalarProperty Name="Actual_Cost" ColumnName="Actual_Cost" />
+          <ScalarProperty Name="Varrience" ColumnName="Varrience" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeType_Id" ColumnName="EmployeType_Id" />
+          <ScalarProperty Name="LastEducation_Id" ColumnName="LastEducation_Id" />
+          <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+          <ScalarProperty Name="Department_Id1" ColumnName="Department_Id1" />
+          <ScalarProperty Name="Reference_Id" ColumnName="Reference_Id" />
+          <ScalarProperty Name="Salary_id" ColumnName="Salary_id" />
+          <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Govt_ID" ColumnName="Govt_ID" />
+          <ScalarProperty Name="SSN_No" ColumnName="SSN_No" />
+          <ScalarProperty Name="Driving_License_No" ColumnName="Driving_License_No" />
+          <ScalarProperty Name="Image_path" ColumnName="Image_path" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Deputation_Location" ColumnName="Deputation_Location" />
+          <ScalarProperty Name="LastEducationDate" ColumnName="LastEducationDate" />
+          <ScalarProperty Name="LastEmployer_Name" ColumnName="LastEmployer_Name" />
+          <ScalarProperty Name="LastEmployer_Add" ColumnName="LastEmployer_Add" />
+          <ScalarProperty Name="LastEmployer_Contact" ColumnName="LastEmployer_Contact" />
+          <ScalarProperty Name="LastEmployer_FromDate" ColumnName="LastEmployer_FromDate" />
+          <ScalarProperty Name="LastEmployer_ToDate" ColumnName="LastEmployer_ToDate" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="Home_ContactNo" ColumnName="Home_ContactNo" />
+          <ScalarProperty Name="Emergency_ContactNo" ColumnName="Emergency_ContactNo" />
+          <ScalarProperty Name="Emergency_Person_Name" ColumnName="Emergency_Person_Name" />
+          <ScalarProperty Name="Emergency_Person_Relationship" ColumnName="Emergency_Person_Relationship" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="ModeOfTraveling" ColumnName="ModeOfTraveling" />
+          <ScalarProperty Name="VehichleNo" ColumnName="VehichleNo" />
+          <ScalarProperty Name="Status1" ColumnName="Status1" />
+          <ScalarProperty Name="U_id1" ColumnName="U_id1" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+          <ScalarProperty Name="Allownce1" ColumnName="Allownce1" />
+          <ScalarProperty Name="Allownce2" ColumnName="Allownce2" />
+          <ScalarProperty Name="Allownce3" ColumnName="Allownce3" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="LeaveBalnces" ColumnName="LeaveBalnces" />
+          <ScalarProperty Name="Benefit1" ColumnName="Benefit1" />
+          <ScalarProperty Name="Benefit2" ColumnName="Benefit2" />
+          <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+          <ScalarProperty Name="Attendance_Id" ColumnName="Attendance_Id" />
+          <ScalarProperty Name="Last_Institue_Name" ColumnName="Last_Institue_Name" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Client_No" ColumnName="Client_No" />
+          <ScalarProperty Name="Client_Mobile" ColumnName="Client_Mobile" />
+          <ScalarProperty Name="Client_Address" ColumnName="Client_Address" />
+          <ScalarProperty Name="IsActive1" ColumnName="IsActive1" />
+          <ScalarProperty Name="Status2" ColumnName="Status2" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="projectstatus" ColumnName="projectstatus" />
+          <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+          <ScalarProperty Name="Varience" ColumnName="Varience" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_PRojectType_Insert" FunctionName="HRPortalModel.Store.sp_PRojectType_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_Role_GetAll" FunctionName="HRPortalModel.Store.sp_Role_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_Role_GetAll_Result">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SelectOne" FunctionName="HRPortalModel.Store.sp_SelectOne">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_SelectOne_Result">
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Status_Update" FunctionName="HRPortalModel.Store.sp_Status_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Status_Update_Delete" FunctionName="HRPortalModel.Store.sp_Status_Update_Delete" />
+    <FunctionImportMapping FunctionImportName="sp_tbl_Project_Employee_Working_hours_EndTime" FunctionName="HRPortalModel.Store.sp_tbl_Project_Employee_Working_hours_EndTime" />
+    <FunctionImportMapping FunctionImportName="sp_User_Insert" FunctionName="HRPortalModel.Store.sp_User_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_USER_SelectAll" FunctionName="HRPortalModel.Store.sp_USER_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRPortalModel.sp_USER_SelectAll_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

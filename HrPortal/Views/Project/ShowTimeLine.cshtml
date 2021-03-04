@@ -1,0 +1,83 @@
+﻿@model HrProperty.Models.TimeLine_Property
+
+@{ 
+    Layout = null;
+}
+
+
+<div class="card-body">
+    <form role="form" id="formadddesignation">
+        <div class="row">
+            <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Time Line Name</label>
+                    @Html.EditorFor(model => model.TimeLineName, new { htmlAttributes = new { @placeholder = "TimeLine Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+
+
+                    @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                </div>
+                @Html.ValidationMessageFor(model => model.TimeLineName, "", new { @class = "text-danger" })
+
+
+            </div>
+            <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Start Date</label>
+                    @Html.EditorFor(model => model.Start_Date, new { htmlAttributes = new { @placeholder = "Start Date", @class = "form-control", @id = "txtboxdeprtmntname" } })
+
+
+                    @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                </div>
+                @Html.ValidationMessageFor(model => model.Start_Date, "", new { @class = "text-danger" })
+
+
+            </div>
+          
+            @*<div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                    </div>
+                    <br />
+                    @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                </div>*@
+        </div>
+        <div class="row">
+           
+            <div class="col-sm-6">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>End Date</label>
+                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @placeholder = "End Date", @class = "form-control", @id = "txtboxdeprtmntname" } })
+
+
+                    @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                </div>
+                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+
+
+            </div>
+
+            @*<div class="col-sm-6">
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                </div>
+                <br />
+                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+            </div>*@
+            @Html.HiddenFor(model => model.ID, new { id = "natureOfVisitField", value = 0 })
+        </div>
+       
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".date-picker").datepicker({
+            format: "yyyy-mm-dd"
+        })
+    })
+   
+</script>

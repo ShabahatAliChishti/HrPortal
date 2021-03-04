@@ -1,0 +1,379 @@
+﻿
+@{
+    ViewBag.Title = "View Employee";
+}
+<style>
+    .btn-info {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+        box-shadow: none;
+        padding: 2px 7px;
+        font-size: 12px;
+    }
+
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        box-shadow: none;
+        padding: 2px 7px;
+        font-size: 12px;
+    }
+
+    table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+        padding: 5px;
+    }
+
+    .content-header {
+        padding: 7px .5rem;
+    }
+</style>
+
+
+
+<!-- Navbar -->
+<!-- /.navbar -->
+<!-- Main Sidebar Container -->
+<!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Employees</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Employees</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- /.card -->
+
+            <div class="card">
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Govt Issued No</th>
+                                <th>Department</th>
+                                <th>Employee Type</th>
+                                <th>Designation</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<div class="modal fade" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login Records</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            @*<div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnaddnewemptype" class="btn btn-primary">Calculate</button>
+            </div>*@
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+@*<aside class="control-sidebar control-sidebar-dark">
+         Control sidebar content goes here
+    </aside>*@
+<style type="text/css">
+    .dataTable tr td {
+        height: 20px;
+        width: 70px;
+        /* or whatever height you need to make them all consistent */
+    }
+</style>
+<!-- page script -->
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Employee/GetEmployees",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnadddepartment").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+
+                $("#modelbody").load("/Department/AddDepartment", function (e) {
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //add customer button event
+            $("#btnaddnewdepartment").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formadddeprtment");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Department/AddDepartment",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Department/ViewDepartment"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.Employee),
+
+
+                    columns: [
+
+                        { data: 'EmployeeName' },
+                        { data: 'Govt_ID' },
+                        { data: 'Department_Name' },//or { data: 'MONTH', title: 'Month' }`
+                        { data: 'EmployeeType' },
+                        { data: 'Designation' },
+                        { data: 'Status' },
+                        {
+                            "data": "ID",
+                            "render": function (ID, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-secondary" onclick="ViewLoginRecords(' + ID + ')"><i class="fa fa-edit"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + ID + ')"><i class="fa fa-trash"></i></a>'
+
+                            },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowEmployee(CustomerID) {
+
+            var url = "/Employee/ShowEmployee?Id=" + CustomerID;
+            window.location.href = url;
+            //$("#modelbody").load(url, function (e) {
+            //    var id = $('#Customer_Id').val();
+            //    if (id > 0) {
+            //        $('#btnaddnewcustomer').html("update ");
+            //    }
+            //    $("#modal-default").modal("show");
+            //});
+        }
+
+
+        function ViewLoginRecords(CustomerID) {
+
+            var url = "/Employee/ViewLoginRecords?Id=" + CustomerID;
+            // window.location.href = url;
+
+            $("#modelbody").load(url, function (e) {
+
+
+                $("#modal-default").modal("show");
+
+
+            });
+           
+        }
+
+        function ConfirmDelete(CustomerID) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Delete!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Employee/DeleteEmployee?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                Command: toastr["success"]("success", "Login successful")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.reload();
+                                //toastr.options.timeOut = 1000;
+                                //toastr.options.fadeOut = 1000;
+                                //toastr.options.onHidden = function () {
+                                //    console.log("abc")
+                                //    // this will be executed after fadeout, i.e. 2secs after notification has been show
+                                //    window.location.reload();
+                                //};
+                         
+
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+    </script>
+}
+
+
+
+

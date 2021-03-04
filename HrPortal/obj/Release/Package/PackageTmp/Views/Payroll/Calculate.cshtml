@@ -1,0 +1,536 @@
+﻿
+@{
+    ViewBag.Title = "Calculate";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Payroll</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Payroll</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+                <div class="card-header">
+                  
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Month</label>
+
+                                <select id="payrollmonthforcheckbox" class="form-control">
+                                    <option value="1">Jan</option>
+                                    <option value="2">Feb</option>
+                                    <option value="3">Mar</option>
+                                    <option value="4">Apr</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">Aug</option>
+                                    <option value="9">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Year</label>
+                            <select id="payrollyearforcheckbox" class="form-control"></select>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>. </label>
+                               <button class="btn btn-primary form-control" id="btncalculatechecksalary">Process Payroll</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                   
+                   </div>
+                <!-- /.card-header -->
+                <div class="card-body" width="100%">
+                    <form id="frm-example" method="POST">
+                        <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" name="select_all" value="1" id="example-select-all"></th>
+                                    <th>Employee Name</th>
+                                    <th>Per Month Salary</th>
+                                    <th>Per Day Salary</th>
+                                    <th>Per Hour Salary</th>
+                                    <th>Account No</th>
+                                    <th>Govt Id No</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+
+                        </table>
+                        
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<div class="modal fade" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Calculate Payroll</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnaddnewemptype" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal fade" id="modal-payroll" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Payroll</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelpayrollbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- ./wrapper -->
+
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+          var min = 2000,
+          max = new Date().getFullYear(),
+          select = document.getElementById('payrollyearforcheckbox');
+
+            for (var i = min; i <= max; i++) {
+                var opt = document.createElement('option');
+                opt.value = i;
+                opt.innerHTML = i;
+                select.appendChild(opt);
+            }
+
+            $.ajax({
+                url: "/payroll/GetEmployeeForPayroll",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnaddemployeetype").click(function () {
+                $("#modelbody").load("/EmployeeType/AddEmployeeType", function (e) {
+
+                    //add customer button event
+                    
+
+
+
+
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //$("#btnaddnewemptype").click(function (e) {
+            //    console.log("121");
+            //    e.preventDefault();
+            //    var form = $("#formadddemptype");
+
+            //    $.validator.unobtrusive.parse(form);
+            //    if ($(form).valid()) {
+            //        $.ajax({
+            //            type: "POST",
+            //            url: "/Payroll/CalculateResult",
+            //            data: $(form).serialize(),
+            //            success: function (res) {
+            //                console.log(res);
+            //                if (res.success) {
+            //                    if (JSON.parse(res.data) != null) {
+            //                        $("#payroll").show("slow");
+            //                        var data=JSON.parse(res.data);
+            //                        console.log(data[0]["TotalWorkedhours"]);
+
+            //                        $("#txtworkedhrs").val(data[0].TotalWorkedhours);
+            //                        $("#txtEmployeeSalary").val(data[0].EmployeeSalary);
+            //                        $("#txtsalrybyworkedhrs").val(data[0].SalaryByHours);
+            //                        $("#txtsalryperhrs").val(data[0].Perhoursalary);
+            //                        $("#txtEmployeeShorthours").val(data[0].short_hours);
+            //                        $("#txtEmployeeleavehours").val(data[0].LeaveBalnces);
+
+                                    
+            //                    }
+            //                    console.log(JSON.parse(res.data));
+            //                }
+            //                else if (res.success == false && res.msg == 'Failed') {
+            //                        Command: toastr["error"]("Invalid ", " Failed")
+
+            //                    toastr.options = {
+            //                        "closeButton": false,
+            //                        "debug": false,
+            //                        "newestOnTop": false,
+            //                        "progressBar": true,
+            //                        "positionClass": "toast-top-center",
+            //                        "preventDuplicates": false,
+            //                        "onclick": null,
+            //                        "showDuration": "300",
+            //                        "hideDuration": "1000",
+            //                        "timeOut": "5000",
+            //                        "extendedTimeOut": "1000",
+            //                        "showEasing": "swing",
+            //                        "hideEasing": "linear",
+            //                        "showMethod": "fadeIn",
+            //                        "hideMethod": "fadeOut"
+            //                    }
+            //                }
+            //            },
+            //            failure: function (res) {
+            //                console.log(res);
+            //            },
+            //            err: function (res) {
+            //                console.log(res);
+            //            }
+
+            //        })
+            //    }
+            //    else {
+            //        return false;
+            //    }
+
+            //});
+
+            function bindCustomersInDataTable(data) {
+                //console.log(JSON.parse(data.emptype));
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.Designation),
+                    columns: [
+                        {
+                            "data": "Attendance_Id",
+                            'render': function (Attendance_Id, type, full, meta) {
+                                return '<input type="checkbox" name="id[]" value="' + $('<div/>').text(Attendance_Id).html() + '">';
+                            }
+                        },
+                        { data: 'EmployeeName' },
+                        { data: 'TotalSalary' },
+                        { data: 'Perdaysalary' },
+                        { data: 'Perhoursalary' },
+                        { data: 'BankAccountNo' },
+                        { data: 'Govt_ID' }
+                        //{
+
+                        //    "data": "Attendance_Id",
+                        //    "render": function (Attendance_Id, type, full, meta) {
+
+                        //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + Attendance_Id + ')"><i class="fa fa-calculator"></i></a>'
+
+                        //},
+                        //    "orderable": true,
+                        //    "searchable": true,
+
+
+                        //}
+
+
+                    ]
+                });
+
+                $('#example-select-all').on('click', function () {
+                    // Check/uncheck all checkboxes in the table
+                    var rows = table.rows({ 'search': 'applied' }).nodes();
+                    $('input[type="checkbox"]', rows).prop('checked', this.checked);
+                });
+
+
+
+                $('#btncalculatechecksalary').on('click', function (e) {
+                    var form = $("#frm-example")[0];
+
+                    // Iterate over all checkboxes in the table
+                    table.$('input[type="checkbox"]').each(function () {
+                        // If checkbox doesn't exist in DOM
+                        if (!$.contains(document, this)) {
+                            // If checkbox is checked
+                            if (this.checked) {
+                                // Create a hidden element 
+                                $(form).append(
+                                   $('<input>')
+                                      .attr('type', 'hidden')
+                                      .attr('name', this.name)
+                                      .val(this.value)
+                                );
+                            }
+                        }
+                    });
+
+                    // FOR TESTING ONLY
+
+                    // Output form data to a console
+                    var abc = $(form).serializeArray();
+
+                    
+
+                    //$('#example-console').text($(form).serializeArray());
+                    if ($(form).serializeArray().length > 1) {
+                        var month, year;
+                        var attid=[];
+                        month = $('#payrollmonthforcheckbox').val();
+                        year = $('#payrollyearforcheckbox').val();
+                        for (var i = 1; i < $(form).serializeArray().length; i++) {
+                            attid.push($(form).serializeArray()[i].value);
+                        }
+                        var datatopost = new FormData();
+                        datatopost.append('attendanceidarray',attid);
+                        datatopost.append('month',month);
+                        datatopost.append('year', year);
+                        console.log(datatopost);
+                        console.log(attid);
+                        console.log(month);
+                        console.log(year);
+                        //$.post("/Payroll/GetPayrollMultiple", { attendanceidarray: attid, year: year, month: month })
+                        //     .done(function (data) {
+                        // alert("Data Loaded: " + data);
+                        //     });
+                        $("#modelpayrollbody").load("/Payroll/GetPayrollMultiple", { attendanceidarray: attid, year: year, month: month }, function (e) {
+
+                            //add customer button event
+
+
+
+
+
+                            $("#modal-payroll").modal("show");
+
+
+                        });
+                        console.log(attid);
+                        console.log(month);
+                    }
+                    else {
+                        alert("Please Select Atleast One Record");
+                    }
+                    // Prevent actual form submission
+                    e.preventDefault();
+                });
+
+
+
+//bind customer
+            }
+
+//docmnt ready           
+        });
+
+        function ShowCustomer(CustomerID) {
+
+            var url = "/Payroll/CalculateResult?Id=" + CustomerID;
+
+            $("#modelbody").load(url, function (e) {
+                var id = $('#Customer_Id').val();
+                if (id > 0) {
+                    $('#btnaddnewcustomer').html("update ");
+                }
+                $("#modal-default").modal("show");
+            });
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Block!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/Customer/DeleteCustomer?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/Customer/ViewCustomers"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+
+
+        $("#btnaddnewemptype").click(function (e) {
+            console.log($('#payrollyear').val());
+            console.log($('#payrollmonth').val());
+            
+            e.preventDefault();
+            //var form = $("#formadddemptype");
+         
+            var formdata = new FormData();
+            var month, year, attid, GeneralHolidays;
+            month = $('#payrollmonth').val();
+            year = $('#payrollyear').val();
+            attid = $('#attid').val();
+           // GeneralHolidays = $('#generalholidays').val();
+            formdata.append("year", year);
+            formdata.append("month", month);
+            formdata.append("attendance_id", attid);
+          //  formdata.append("GeneralHolidays", GeneralHolidays);
+            $.ajax({
+                type: "POST",
+                url: "/Payroll/CalculateResult",
+                data: formdata,// $(form).serialize(),
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    console.log(res);
+                    if (res.success) {
+                        if (JSON.parse(res.data) != null) {
+                            $("#payroll").show("slow");
+                            var data = JSON.parse(res.data);
+                            console.log(data[0]["TotalWorkedhours"]);
+
+                            $("#txtworkedhrs").val(data[0].WorkedDays);
+                            $("#txtEmployeeSalary").val(data[0].EmployeeSalary);
+                            $("#txtsalrybyworkedhrs").val(data[0].SalaryByDays);
+                            $("#txtsalryperhrs").val(data[0].PerDaySalary);
+                            $("#txtEmployeeShorthours").val(data[0].AbsentDays);
+                            $("#txtEmployeeleavehours").val(data[0].LeaveBalnces);
+                            $("#txtEmployeeShortworkingdays").val(data[0].short_hours);
+                            
+
+                        }
+                        console.log(JSON.parse(res.data));
+                    }
+                    else if (res.success == false && res.msg == 'Failed') {
+                            Command: toastr["error"]("Invalid ", " Failed")
+
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": true,
+                            "positionClass": "toast-top-center",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+                    }
+                },
+                failure: function (res) {
+                    console.log(res);
+                },
+                err: function (res) {
+                    console.log(res);
+                }
+
+            })
+       
+       
+
+        });
+
+    </script>
+}
+
+
+
+

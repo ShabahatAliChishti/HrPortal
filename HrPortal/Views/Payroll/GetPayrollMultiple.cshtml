@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="card-body">
+    <form id="frm-example" method="POST">
+        <div class="table-responsive mg-t-25">
+            <table id="example" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Total Worked Days</th>
+                        <th>Salary By Worked Days</th>
+                        <th>Employee Salary</th>
+                        <th>Employee Salary Per Day</th>
+                        <th>Employee Absent Days</th>
+                        <th>Employee Short Hours</th>
+                        <th>Approved Leaves</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+
+            </table>
+        </div>
+    </form>
+</div>
+
+
+
+    <script> 
+
+    $(document).ready(function () {
+        console.log(@Html.Raw(@ViewBag.FooObj));
+
+        var table = $('#example').DataTable({
+            data:@Html.Raw(@ViewBag.FooObj),
+            columns: [
+                       
+                { data: 'EmployeeName' },
+                 { data: 'WorkedDays' },     
+                 { data: 'SalaryByDays' },
+                 { data: 'EmployeeSalary' },   
+                 { data: 'PerDaySalary' },     
+                 { data: 'AbsentDays' },
+                 { data: 'short_hours' }, 
+                 { data: 'ApprovedLeaves' }
+            ]
+        });
+
+
+
+        //docmnt ready
+    });
+    
+
+</script>
+
+
+
+
+
+

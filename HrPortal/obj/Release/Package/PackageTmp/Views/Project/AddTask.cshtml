@@ -1,0 +1,287 @@
+﻿@model HrProperty.Models.Project_Property
+
+
+@{
+    ViewBag.Title = "AddTask";
+}
+<!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Add Task</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Project Add</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <form id="projectForm">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Project</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="txtprojectname">Project Name</label>
+                                    @Html.DropDownListFor(model => model.P_Id, new SelectList(Model.Project_Item as List<HrProperty.Models.Project_Property>, "Project_Id", "Project_Name"), "Select Project Name", new { @Class = "selct2 form-control font-weight-bold",@id="Projectid" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.P_Id, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputProjectLeader">Mile Stone</label>
+                                    <select Class = "selct2 form-control font-weight-bold" id="Milestoneid">
+
+                                    </select>
+                                   @* @Html.DropDownListFor(model => model.MileStone_Id, new SelectList(ViewBag.MileStoneItems as List<HrProperty.Models.TimeLine_Property>, "ID", "TimeLineName"), "Select mileStone", new { @Class = "selct2 form-control font-weight-bold", @data-placeholder = "whatever" , @id = "Milestoneid" })*@
+                                </div>
+                                @Html.ValidationMessageFor(model => model.MileStone_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="txtprojectname">Task Name</label>
+                                    @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @placeholder = "Task Name", @class = "form-control", @id = "txtrprojectworkdate" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputProjectLeader">Resource Name</label>
+                                    @Html.DropDownListFor(model => model.Resource_Id, new SelectList(ViewBag.EmployeelistItems as List<HrProperty.Models.EmployeeProperty>, "Id", "EmpName"), "Select Employee", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Resource_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+
+                        
+                        
+
+                        <div class="form-group">
+                            <label for="inputDescription">Project Description</label>
+                            @Html.TextAreaFor(model => model.Task_Description, new { @placeholder = "Project Description", @class = " form-control", @id = "txtareaprojectdescription", rows = "4" })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.Task_Description, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    @Html.EditorFor(model => model.Start_Date, new { htmlAttributes = new { @placeholder = "Start Date", @class = "date-picker form-control", @id = "txtrojectname" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Start_Date, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Expected Completion Date</label>
+                                    @Html.EditorFor(model => model.Expected_completedDate, new { htmlAttributes = new { @placeholder = "Work Date", @class = "form-control date-picker", @id = "txtrprojectworkdate" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Work_Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Allocated Time In Hours</label>
+                                    @Html.EditorFor(model => model.Allocated_time, new { htmlAttributes = new { @placeholder = "Allocated Time In Hours", @class = "form-control", @id = "txtrojectname" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Allocated_time, "", new { @class = "text-danger" })
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            
+
+
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-12">
+            @*<a href="#" class="btn btn-secondary">Cancel</a>*@
+            <input type="button" value="Assign Task" id="btnassigntask" class="btn btn-success float-right">
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
+
+
+@section Myscripts{
+    <script type="text/javascript">
+      
+        $(document).ready(function () {
+           
+            var items=@Html.Raw(Json.Encode(ViewBag.MileStoneItems));
+            console.log(items[0].ID);
+            for(var i=0;i<items.length;i++){
+                $('#Milestoneid').append('<option value="'+items[i].ID+'" data-val="'+items[i].Project_ID+'" >'+items[i].TimeLineName+'</option>');
+            }
+
+            //$.each(items, function(ID, TimeLineName) {   
+            //    console.log(ID)
+            //    $('#Milestoneid')
+            //        .append($("<option></option>")
+            //                   .attr("value",ID)
+            //                   .text(TimeLineName)); 
+            //});
+            
+
+            $(".date-picker").datepicker({
+                format: "yyyy-mm-dd"
+            })
+            //select DropDown code initialize
+            $(".selct2").select2({
+                theme: 'bootstrap4'
+            });
+
+
+            var $select1 = $('#Projectid'),
+                $select2 = $('#Milestoneid'),
+                $options = $select2.find('option');
+
+            $select1.on('change', function () {
+                $select2.html($options.filter('[data-val="' + this.value + '"]'));
+            }).trigger('change');
+
+
+            //select Project Leader dropDown change start
+            $("#Resource_Id").change(function () {
+                var resourceId = this.value;
+                getResourceInfo(resourceId);
+
+            });
+
+            //select Project Leader drop Down change end
+
+
+            //Add Project Button Event start
+
+            $("#btnassigntask").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#projectForm");
+                var milestoneid=$("#Milestoneid option:selected").attr("data-val");
+                console.log(milestoneid);
+                var formData=new FormData(form[0]);
+                formData.append('MileStone_Id',$("#Milestoneid option:selected").val());
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Project/AddTask",
+                        data:formData,// $(form).serialize(),
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": true,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Project/ViewProject"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+           
+
+        });
+        // function to get employee Information
+        function getResourceInfo(resourceid) {
+            $.get("/Employee/GetEmployeeByID?id=" + resourceid, function (data) {
+                var Emplobject = JSON.parse(data.data);
+                $("#Department_ID").val(Emplobject[0].Department_Id).trigger('change');;
+            });
+        }
+
+
+    </script>
+
+}
+

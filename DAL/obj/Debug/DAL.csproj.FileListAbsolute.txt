@@ -1,0 +1,80 @@
+D:\Umer\HrPortal\Project\DAL\bin\Debug\DAL.dll.config
+D:\Umer\HrPortal\Project\DAL\bin\Debug\DAL.dll
+D:\Umer\HrPortal\Project\DAL\bin\Debug\DAL.pdb
+D:\Umer\HrPortal\Project\DAL\bin\Debug\EntityFramework.dll
+D:\Umer\HrPortal\Project\DAL\bin\Debug\HrProperty.dll
+D:\Umer\HrPortal\Project\DAL\bin\Debug\HrProperty.pdb
+D:\Umer\HrPortal\Project\DAL\bin\Debug\EntityFramework.xml
+D:\Umer\HrPortal\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\Project\DAL\obj\Debug\DAL.dll
+D:\Umer\HrPortal\Project\DAL\obj\Debug\DAL.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll.config
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.xml
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll.config
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\DAL.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.pdb
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.xml
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\obj\Debug\DAL.dll
+E:\Visual Studio Projects\AppiCoders\HRPortal\HRPortalSystem\HRPortalSystem\HRPortalSystem\Project\DAL\obj\Debug\DAL.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\DAL.dll.config
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\DAL.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\DAL.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\EntityFramework.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\HrProperty.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\HrProperty.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Debug\EntityFramework.xml
+E:\Talha\Main Projects\HrPortal\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Talha\Main Projects\HrPortal\DAL\obj\Debug\DAL.dll
+E:\Talha\Main Projects\HrPortal\DAL\obj\Debug\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll.config
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Debug\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Debug\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\DAL.dll.config
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Debug\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Debug\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Debug\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\DAL.dll.config
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\HrProperty.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\HrProperty.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Debug\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Debug\DAL.pdb
+D:\Junaid\HrPortal\DAL\obj\Debug\DAL.dll
+D:\Junaid\HrPortal\DAL\obj\Debug\DAL.pdb
+D:\Junaid\HrPortal\DAL\bin\Debug\DAL.dll.config
+D:\Junaid\HrPortal\DAL\bin\Debug\DAL.dll
+D:\Junaid\HrPortal\DAL\bin\Debug\DAL.pdb
+D:\Junaid\HrPortal\DAL\bin\Debug\EntityFramework.dll
+D:\Junaid\HrPortal\DAL\bin\Debug\HrProperty.dll
+D:\Junaid\HrPortal\DAL\bin\Debug\HrProperty.pdb
+D:\Junaid\HrPortal\DAL\bin\Debug\EntityFramework.xml
+D:\Junaid\HrPortal\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

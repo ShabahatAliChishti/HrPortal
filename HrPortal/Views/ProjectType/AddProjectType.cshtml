@@ -1,0 +1,154 @@
+﻿@model HrProperty.Models.ProjectType_Property
+
+@{
+    ViewBag.Title = "Add Project Type";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- general form elements disabled -->
+                <div>
+                    <div class="card-header">
+
+                    </div>
+
+
+                    <div class="card-body">
+                        <form role="form" id="formadddprojtype">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Project Type:</label>
+                                        @Html.EditorFor(model => model.Project_type, new { htmlAttributes = new { @placeholder = "Project Type", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Project_type, "", new { @class = "text-danger" })
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                @Html.HiddenFor(model => model.Project_type_id, new { id = "natureOfVisitField", value = 0 })
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+
+                                        <input type="button" id="btnaddaproject" class="btn btn-primary" value="Add Project Type">
+                                    </div>
+
+
+                                </div>
+                                @*<div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Customer Name</label>
+                                            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @placeholder = "Customer Name", @class = "form-control", @id = "txtboxcustomername" } })
+                                        </div>
+                                        <br />
+                                        @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                                    </div>*@
+                            </div>
+                        </form>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                    @section MyScripts {
+                        <script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+
+        //add customer button event
+        $("#btnaddaproject").click(function (e) {
+            e.preventDefault();
+            //var form = $("#employeeform");
+            var form = $('#formadddprojtype');
+
+            $.validator.unobtrusive.parse(form);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: "/ProjectType/AddProjectType",
+                    data: $(form).serialize(),
+                    //contentType: false,
+                    //processData: false,
+                    //cache: false,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.success) {
+                            Command: toastr["success"]("", "Added Successfuly")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                            window.location.href = "/projectType/ViewAllprojectType"
+                        }
+                        else if (res.success == false && res.msg == 'Failed') {
+                                Command: toastr["error"]("Invalid ", " Failed")
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": false,
+                                "progressBar": true,
+                                "positionClass": "toast-top-center",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            }
+                        }
+                    },
+                    failure: function (res) {
+                        console.log(res);
+                    },
+                    err: function (res) {
+                        console.log(res);
+                    }
+
+                })
+            }
+            else {
+                return false;
+            }
+
+        });
+
+
+    });
+
+
+
+                        </script>
+                    }

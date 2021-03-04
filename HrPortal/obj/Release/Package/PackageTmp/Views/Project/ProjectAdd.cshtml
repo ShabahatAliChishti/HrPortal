@@ -1,0 +1,282 @@
+﻿@model HrProperty.Models.Project_Property
+
+@{
+    ViewBag.Title = "Project Add";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Project Add</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Project Add</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <form id="projectForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Project</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="txtprojectname">Project Name</label>
+                                    @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @placeholder = "Project Name", @class = "form-control", @id = "txtprojectname" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputName">Cient Name</label>
+                                    @Html.DropDownListFor(model => model.Client_id, new SelectList(ViewBag.ClientlistItems as List<HrProperty.Models.Client_Property>, "Client_id", "Client_name"), "Select Client", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Client_id, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputProjectLeader">Project Leader</label>
+                                    @Html.DropDownListFor(model => model.Resource_Id, new SelectList(ViewBag.EmployeelistItems as List<HrProperty.Models.EmployeeProperty>, "Id", "EmpName"), "Select Employee", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Resource_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputName">Project Type</label>
+                                    @Html.DropDownListFor(model => model.Project_Type, new SelectList(ViewBag.Project_Type as List<HrProperty.Models.ProjectType_Property>, "Project_type_id", "Project_type"), "Select Project Type", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Project_Type, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    @Html.DropDownListFor(model => model.Department_ID, new SelectList(ViewBag.DepartmentlistItems as List<HrProperty.Models.Department_Property>, "Department_Id", "DepartmentName"), "Select Department", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Department_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputDescription">Project Description</label>
+                            @Html.TextAreaFor(model => model.Task_Description, new { @placeholder = "Project Description", @class = " form-control", @id = "txtareaprojectdescription", rows = "4" })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.Task_Description, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    @Html.EditorFor(model => model.Start_Date, new { htmlAttributes = new { @placeholder = "Start Date", @class = "date-picker form-control", @id = "txtrojectname" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Start_Date, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Expected Completion Date</label>
+                                    @Html.EditorFor(model => model.Expected_completedDate, new { htmlAttributes = new { @placeholder = "Work Date", @class = "form-control date-picker", @id = "txtrprojectworkdate" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Work_Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @Html.HiddenFor(model => model.Project_Id, new { id = "natureOfVisitField"})
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Budget</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <!-- textarea -->
+                                <div class="form-group">
+                                    <label>Budget Cost</label>
+                                    @Html.EditorFor(model => model.Budget_Cost, new { htmlAttributes = new { @placeholder = "Budget Cost", @class = "form-control", @id = "txtboxbudgetcost" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Budget_Cost, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- textarea -->
+                                <div class="form-group">
+                                    <label>Project Estimated Duration In Days</label>
+                                    @Html.EditorFor(model => model.Allocated_time, new { htmlAttributes = new { @placeholder = "Project Estimated Duration In Days", @class = "form-control", @id = "txtboxduration" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Allocated_time, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+
+        </div>
+        </form>
+        <div class="row">
+            <div class="col-12">
+                @*<a href="#" class="btn btn-secondary">Cancel</a>*@
+                <input type="button" value="Create new Porject" id="btnAddProject" class="btn btn-success float-right">
+            </div>
+        </div>
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
+
+
+@section Myscripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+
+            $(".date-picker").datepicker({
+                format: "yyyy-mm-dd"
+            })
+            //select DropDown code initialize
+            $(".selct2").select2({
+                theme: 'bootstrap4'
+            });
+
+            //select Project Leader dropDown change start
+            $("#Resource_Id").change(function () {
+                var resourceId = this.value;
+                getResourceInfo(resourceId);
+
+            });
+
+            //select Project Leader drop Down change end
+            
+
+            //Add Project Button Event start
+
+            $("#btnAddProject").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#projectForm");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Project/AddProject",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": true,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Project/ViewProject"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            //Add Project Button Event End
+
+        });
+        // function to get employee Information
+        function getResourceInfo(resourceid) {
+            $.get("/Employee/GetEmployeeByID?id=" + resourceid, function (data) {
+                var Emplobject = JSON.parse(data.data);
+                $("#Department_ID").val(Emplobject[0].Department_Id).trigger('change');;
+            });
+        }
+
+
+    </script>
+
+}

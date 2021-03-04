@@ -1,0 +1,321 @@
+﻿
+@{
+    ViewBag.Title = "ViewProject";
+}
+
+
+
+            <!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Projects</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Projects</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- /.card -->
+
+            <div class="card">
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<div class="modal fade full-width-div" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Project Estimations</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                @*<button type="button" id="btnaddnewemptype" class="btn btn-primary">Save changes</button>*@
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<style>
+    .full-width-div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+</style>
+
+@*<aside class="control-sidebar control-sidebar-dark">
+         Control sidebar content goes here
+    </aside>*@
+
+<!-- page script -->
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Project/getProjects",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnaddproject").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+
+                $("#modelbody").load("/Project/AddProject", function (e) {
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //add customer button event
+            $("#btnaddnewdepartment").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formadddeprtment");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Department/AddDepartment",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Department/ViewDepartment"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.projectlist),
+                    columns: [
+                        { data: 'Project_Name' },
+                        {
+                            data: 'Start_Date',
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+                        {
+                            data: 'Expected_Completed_Date',
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+                        { data: 'Status' },
+                      
+                        {
+                            "data": "Project_Id",
+                            "render": function (Project_Id, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowEmployee(' + Project_Id + ')"><i class="fa fa-eye"></i></a><a href="#" class="btn btn-info" onclick="ProjectMileStone(' + Project_Id + ')"><i class="fa">View MileStone</i></a> <a href="#" class="btn btn-danger" onclick="ProjectEstimation(' + Project_Id + ')"><i class="fa">Costing Details</i></a> '
+
+                        },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowEmployee(CustomerID) {
+
+            var url = "/Project/ShowProject?Id=" + CustomerID;
+            window.location.href = url;
+            
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Delete!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/Project/DeleteProject?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/Project/ViewProject"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failed',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+        
+        function ProjectMileStone(ProjectId) {
+           
+            window.location.href = "/Project/ViewMilesStone?id=" + ProjectId;
+
+        }
+
+        function ProjectEstimation(ProjectId) {
+            $("#modelbody").load("/Project/GetProjectEstimationDetails?id=" + ProjectId, function (e) {
+               $("#modal-default").modal("show");
+
+
+            });
+
+        }
+    </script>
+}

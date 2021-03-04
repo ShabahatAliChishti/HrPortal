@@ -1,0 +1,384 @@
+﻿
+@model HrProperty.Models.User_Property
+
+@{
+    ViewBag.Title = "AddUser";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <h1>Add User</h1>
+            <!-- left column -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- general form elements disabled -->
+                <div>
+                    <div class="card-header">
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form role="form" id="formUserAdd">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>First Name</label>
+
+                                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @placeholder = "First Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+
+                                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @placeholder = "Last Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+
+                                </div>
+                                @* @Html.HiddenFor(model => model.attendance_id, new { id = "attid" })*@
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Email</label>
+
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>User Name</label>
+
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @placeholder = "User Name", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+
+                                </div>
+                                 @Html.HiddenFor(model => model.ID, new { id = "attid" , value = 0})
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Password</label>
+
+                                        @Html.EditorFor(model => model.Password, new {  htmlAttributes = new { @placeholder = "Password", @class = "form-control", @id = "txtboxPassword" } })
+                                        @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                                    
+
+                                </div>
+
+
+                                <div class="col-sm-4">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        @Html.DropDownListFor(model => model.Roleid, new SelectList(ViewBag.RolelistItems as List<HrProperty.Models.Role_Property>, "Role_Id", "RoleName"), "Select Role", new { @Class = "form-control font-weight-bold" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Roleid, "", new { @class = "text-danger" })
+                                </div>
+                                
+                                @* @Html.HiddenFor(model => model.attendance_id, new { id = "attid" })*@
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Resource Name</label>
+                                        @Html.DropDownListFor(model => model.EmpID, new SelectList(ViewBag.EmployeelistItems as List<HrProperty.Models.EmployeeProperty>, "Id", "EmpName"), "Select Employee", new { @Class = "form-control font-weight-bold" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.EmpID, "", new { @class = "text-danger" })
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label> </label>
+                                        <input type="button" class="form-control btn btn-primary" id="btnAddUser" value="Add User">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Department/getDepartments",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnadddepartment").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+
+                $("#modelbody").load("/Department/AddDepartment", function (e) {
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //add customer button event
+            $("#btnAddUser").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formUserAdd");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/User/AddUser",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Client/ViewClient"
+                            }
+
+                            else if (res.success == false && res.msg == 'Failed' && res.statuscode == 500) {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                            else if (res.success == false && res.msg == 'Failed' && res.statuscode == 501) {
+                                    Command: toastr["error"]("User Already Exist ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.Department),
+                    columns: [
+                        { data: 'Department_Name' },
+                        { data: 'Status' },
+                        { data: 'DateCreated' },//or { data: 'MONTH', title: 'Month' }`
+
+                        {
+                            //"data": function (data, type, dataToSet) {
+
+                            //    if (data.Is_Active) {
+
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                            //    }
+                            //    else {
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                            //    }
+
+                              //  return data.Status + "<br/>" + data.Name;
+                            "data": "ID",
+                            "render": function (ID, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + ID + ')"><i class="fa fa-trash"></i></a>'
+
+                        },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowCustomer(CustomerID) {
+
+            var url = "/Customer/ShowCustomer?Id=" + CustomerID;
+
+            $("#modelbody").load(url, function (e) {
+                var id = $('#Customer_Id').val();
+                if (id > 0) {
+                    $('#btnaddnewcustomer').html("update ");
+                }
+                $("#modal-default").modal("show");
+            });
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Block!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/Customer/DeleteCustomer?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/Customer/ViewCustomers"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+    </script>
+}
+
+

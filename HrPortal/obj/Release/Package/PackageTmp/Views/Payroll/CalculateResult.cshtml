@@ -1,0 +1,182 @@
+﻿@model HrProperty.Models.Payroll_Property
+
+@{ 
+    Layout = null;
+}
+
+<div class="card-body">
+    <form role="form" id="formadddemptype">
+        @*<div class="row">
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>From:</label>
+
+                        @Html.EditorFor(model => model.fromDate, new { htmlAttributes = new { @placeholder = "Employee Type", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.fromDate, "", new { @class = "text-danger" })
+
+
+                </div>
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>To:</label>
+
+                        @Html.EditorFor(model => model.ToDate, new { htmlAttributes = new { @placeholder = "Employee Type", @class = "form-control", @id = "txtboxdeprtmntname" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+                </div>
+                @Html.HiddenFor(model=>model.attendance_id, new { id = "attid"})
+            </div>*@
+
+        <div class="row">
+            <div class="col-sm-4">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Month</label>
+
+                    <select id="payrollmonth" class="form-control">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="col-sm-4">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Year</label>
+                    <select id="payrollyear" class="form-control"></select>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <!-- text input -->
+                @*<div class="form-group">
+                    <label>General Holidays</label>
+                    <input type="number" min="0" value="0" class="form-control" id="generalholidays" />
+                </div>*@
+
+            </div>
+            @Html.HiddenFor(model => model.attendance_id, new { id = "attid" })
+        </div>
+
+
+
+
+
+        @*Result*@
+        <div id="payroll" style="display:none;">
+            <div class="row">
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Total Worked Days</label>
+
+
+                        <input type="text" class="form-control" id="txtworkedhrs" disabled>
+                    </div>
+
+
+
+                </div>
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Salary By Worked Days</label>
+                        @*@Html.EditorFor(model => model.ToDate, new { htmlAttributes = new { @placeholder = "Employee Type", @class = "form-control", @id = "txtsalrybyworkedhrs" } })*@
+                        <input type="text" class="form-control" id="txtsalrybyworkedhrs" disabled>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Employee Salary</label>
+
+                        @*@Html.EditorFor(model => model.fromDate, new { htmlAttributes = new { @placeholder = "Employee Type", @class = "form-control", @id = "txtEmployeeSalary" } })*@
+                        <input type="text" class="form-control" id="txtEmployeeSalary" disabled>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.fromDate, "", new { @class = "text-danger" })
+
+
+                </div>
+
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Employee Salary Per Day</label>
+                        <input type="text" class="form-control" id="txtsalryperhrs" disabled>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Employee Absent Days</label>
+
+                        <input type="text" class="form-control" id="txtEmployeeShorthours" disabled>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-2">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Employee Short Hours</label>
+
+                        <input type="text" class="form-control" id="txtEmployeeShortworkingdays" disabled>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </form>
+</div>
+
+<script>
+
+   
+        var min = 2000,
+          max = new Date().getFullYear(),
+          select = document.getElementById('payrollyear');
+
+        for (var i = min; i <= max; i++) {
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = i;
+            select.appendChild(opt);
+        }
+    
+
+
+
+
+
+        
+    
+</script>

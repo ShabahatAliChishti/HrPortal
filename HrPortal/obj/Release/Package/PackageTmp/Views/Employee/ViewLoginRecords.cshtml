@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="card-body">
+    <form id="frm-example" method="POST">
+        <div class="table-responsive mg-t-25">
+            <table id="example" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Login Time</th>
+                        <th>Logout Time</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>                        
+                    </tr>
+                </thead>
+                <tbody></tbody>
+
+            </table>
+        </div>
+    </form>
+</div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+        console.log(@Html.Raw(ViewBag.EmployeeRecords));
+
+        var table = $('#example').DataTable({
+            data:@Html.Raw(ViewBag.EmployeeRecords),
+            columns: [
+
+                { data: 'EmployeeName' },
+                 { data: 'Login_Time' },
+                 { data: 'Logout_Time' },
+                 { data: 'latitude' },
+                 { data: 'longitude' }
+                 //{ data: 'AbsentDays' },
+                 //{ data: 'short_hours' },
+                 //{ data: 'ApprovedLeaves' }
+            ]
+        });
+
+
+
+        //docmnt ready
+    });
+
+
+</script>
+
+
+
+
+
+

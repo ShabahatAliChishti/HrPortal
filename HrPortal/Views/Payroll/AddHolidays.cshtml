@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "Add Holidays";
+}
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>holiday Form</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Add Holidays</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+@{
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Month</label>
+
+                        <select id="payrollmonth" class="form-control">
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Year</label>
+                        <select id="payrollyear" class="form-control"></select>
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                    <label>General Holidays</label>
+                    <input type="number" min="0" value="0" class="form-control" id="generalholidays" />
+                </div>
+
+                </div>
+                
+            </div>
+            <div class="row">
+                
+                
+                <div class="col-sm-4">
+                    <!-- text input -->
+                    <div class="form-group">
+                      
+                        <input type="button" class="form-control btn btn-primary" id="btnAddClient"  value="Add Holiday"/>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+
+}
+
+
+
+
+@*<aside class="control-sidebar control-sidebar-dark">
+         Control sidebar content goes here
+    </aside>*@
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var min = 2000,
+            max = new Date().getFullYear(),
+            select = document.getElementById('payrollyear');
+
+            for (var i = min; i <= max; i++) {
+                var opt = document.createElement('option');
+                opt.value = i;
+                opt.innerHTML = i;
+                select.appendChild(opt);
+            }
+
+
+          
+
+            //add customer button event
+            $("#btnAddClient").click(function (e) {
+               
+                e.preventDefault();
+                var form = $("#formClientAdd");
+                var formdata = new FormData();
+                var month, year, GeneralHolidays;
+                month = $('#payrollmonth').val();
+                year = $('#payrollyear').val();
+                GeneralHolidays = $('#generalholidays').val();
+
+                formdata.append("holiday_year", year);
+                formdata.append("holiday_month", month);
+                formdata.append("holiday", GeneralHolidays);
+               
+                    $.ajax({
+                        type: "POST",
+                        url: "/Payroll/AddHolidays",
+                        data: formdata,
+                        processData: false,
+                        contentType: false,
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Client/ViewClient"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+               
+                
+
+            });
+
+        
+
+        });
+
+ 
+
+    </script>
+}

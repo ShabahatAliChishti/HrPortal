@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "Show Attendance";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Payroll</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Payroll</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+                <div class="card-header">
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Month</label>
+
+                                <select id="payrollmonthforcheckbox" class="form-control">
+                                    <option value="1">Jan</option>
+                                    <option value="2">Feb</option>
+                                    <option value="3">Mar</option>
+                                    <option value="4">Apr</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">Aug</option>
+                                    <option value="9">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Year</label>
+                            <select id="payrollyearforcheckbox" class="form-control"></select>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>. </label>
+                                <button class="btn btn-primary form-control" id="btndownloadattndnceresult">Show</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" width="100%">
+                    <form id="frm-example" method="POST">
+                        <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                   
+                                    <th>Date</th>
+                                    <th>Time In</th>
+                                    <th>Time Out</th>
+                                    <th>Total Hours</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+
+                        </table>
+
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+@section MyScripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var table;
+        var min = 2000,
+        
+          max = new Date().getFullYear(),
+          select = document.getElementById('payrollyearforcheckbox');
+
+        for (var i = min; i <= max; i++) {
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = i;
+            select.appendChild(opt);
+        }
+
+        $('#btndownloadattndnceresult').on('click', function (e) {
+
+           
+            month = $('#payrollmonthforcheckbox').val();
+            year = $('#payrollyearforcheckbox').val();
+            
+            var datatopost = new FormData();
+           
+            datatopost.append('month', month);
+            datatopost.append('year', year);
+            //console.log(datatopost);
+
+            console.log(month);
+            console.log(year);
+            var url = "/Attendance/GetAttendanceRepotrt?year=" + year + "&month=" + month;
+            //window.location.href = url;
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    if ($.fn.dataTable.isDataTable("#example1")) {
+                        $('#example1').DataTable().destroy();
+                        bindCustomersInDataTable(data);
+                    }
+                    else {
+                        bindCustomersInDataTable(data);
+                    }
+                }
+            });
+
+            //$.post(url, { year: year, month: month })
+            //     .done(function (data) {
+            //        alert("Data Loaded: " + data);
+            //     });
+            
+        }
+    )
+    });
+
+    function bindCustomersInDataTable(data) {
+        var status = "Blocked".toString();
+        //console.log(data);
+        table = $('#example1').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Attendance Report',
+                filename: 'Attendance Report'
+            }, {
+                extend: 'excel',
+                title: 'Attendance Report',
+                filename: 'Attendance Report'
+            }, {
+                extend: 'csv',
+                filename: 'Attendance Report'
+            }],
+            data: JSON.parse(data.data),
+
+
+            columns: [
+
+                {
+                    data: 'Attendance_Date',
+                    "render": function (data, type, row) {
+                        return moment(data).format('DD/MM/YYYY');
+                    }
+                },
+                { data: 'Time_In' },
+                { data: 'Time_Out' },//or { data: 'MONTH', title: 'Month' }`
+                { data: 'Total_hours' }
+               
+             
+            ]
+        });
+
+    }
+</script>
+}

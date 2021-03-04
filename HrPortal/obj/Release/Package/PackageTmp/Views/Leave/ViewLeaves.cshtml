@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "View Leaves";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>View Leaves History</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Leaves History</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+                @*<div class="card-header">
+                        <h3 class="card-title"><button class="btn btn-primary" data-toggle="modal" data-target="#modal-default" id="btnaddclient">Add client</button></h3>
+                    </div>*@
+                <!-- /.card-header -->
+                <div class="card-body" width="100%">
+                    <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Leave Type</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Total Days</th>
+                                <th>Status</th>
+                                <th>Date Applied</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<!-- /.content -->
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Leave/ViewLeaveshistory",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.data),
+                    columns: [
+                        { data: 'Leave_Type' },
+                        {
+                            "data": "Leave_From",
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+
+                        //{ data: 'Leave_From' },
+                        {
+                            "data": "Leave_To",
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+                        //{ data: 'Leave_To' },
+                        { data: 'TotalDays' },
+                        { data: 'LEave_Status' },
+                        {
+                            "data": "Date_Applied",
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },
+                        //{ data: 'Date_Applied' },
+                        { data: 'Remarks' }
+                        //or { data: 'MONTH', title: 'Month' }`
+
+                        //{
+                        //    //"data": function (data, type, dataToSet) {
+
+                        //    //    if (data.Is_Active) {
+
+                        //    //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                        //    //    }
+                        //    //    else {
+                        //    //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                        //    //    }
+
+                        //      //  return data.Status + "<br/>" + data.Name;
+                        //    "data": "ClientID",
+                        //    "render": function (ClientID, type, full, meta) {
+
+                        //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + ClientID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + ClientID + ')"><i class="fa fa-trash"></i></a>'
+
+                        //},
+                        //    "orderable": true,
+                        //    "searchable": true,
+
+
+                        //}
+                    ]
+                });
+
+            }
+
+
+        });
+
+    </script>
+}
+
+
+

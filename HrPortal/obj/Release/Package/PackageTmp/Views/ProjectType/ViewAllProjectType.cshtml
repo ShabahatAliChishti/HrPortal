@@ -1,0 +1,326 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllProjectType";
+}
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>View Project Type</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">ProjectType</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <!-- /.card -->
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><button class="btn btn-primary" data-toggle="modal" data-target="#modal-default" id="btnaddprojecttype">Add Project Type</button></h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" width="100%">
+                    <table id="example1" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Project Type</th>
+                                <th>Status</th>
+                                <th>Date Created</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<div class="modal fade" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Project Type</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnaddnewemptype" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- /.modal -->
+<!-- ./wrapper -->
+<!-- jQuery -->
+@*<script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>*@
+<!-- page script -->
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/ProjectType/getProjectType",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnaddprojecttype").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+                window.location.href = "/ProjectType/AddProjectType";
+
+                //$("#modelbody").load("/ProjectType/AddProjectType", function (e) {
+                //    $("#modal-default").modal("show");
+
+
+                //});
+
+            })
+
+            //add customer button event
+            $("#btnaddnewemptype").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formadddemptype");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/ProjectType/AddProjectType",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/ProjectType/ViewProjectType"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                //console.log(JSON.parse(data.ptype[0].ProjectTypeId));
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.ptype),
+                    columns: [
+                        { data: 'ProjectType'},
+                        { data: 'Status'},
+                        {
+                            data: 'DateCreated',
+                            "render": function (data, type, row) {
+                                return moment(data).format('DD/MM/YYYY');
+                            }
+                        },//or { data: 'MONTH', title: 'Month' }`
+                        {
+                            //"data": function (data, type, dataToSet) {
+
+                            //    if (data.Is_Active) {
+
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                            //    }
+                            //    else {
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                            //    }
+
+                            //  return data.Status + "<br/>" + data.Name;
+                            "data": "ProjectTypeId",
+                            "render": function (ProjectTypeId, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + ProjectTypeId + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + ProjectTypeId + ')"><i class="fa fa-trash"></i></a>'
+
+                            },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowCustomer(CustomerID) {
+            console.log(CustomerID);
+            var url = "/ProjectType/ShowProjectType?Id=" + CustomerID;
+
+            $("#modelbody").load(url, function (e) {
+                //var id = $('#Customer_Id').val();
+                if (id > 0) {
+                    $('#btnaddnewcustomer').html("update");
+                }
+                $("#modal-default").modal("show");
+            });
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Block!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/Customer/DeleteCustomer?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/Customer/ViewCustomers"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+    </script>
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,349 @@
+﻿@model HrProperty.Models.TimeLine_Property
+
+
+@{
+    ViewBag.Title = "Add TimeLine";
+}
+
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Add MileStones</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Add MileStones</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+
+<!-- Main content -->
+<section class="content">
+    <form id="projectForm">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Project</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="txtprojectname">Project Name</label>
+                                    @Html.DropDownListFor(model => model.Project_ID, new SelectList(Model.Project_Item as List<HrProperty.Models.Project_Property>, "Project_Id", "Project_Name"), "Select Project Name", new { @Class = "selct2 form-control font-weight-bold" })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Project_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        
+                       
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">MileStone</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="inputName">MileStone Name</label>
+                                                        @Html.EditorFor(model => model.TimeLineName, new { htmlAttributes = new { @placeholder = "MileStone Name", @class = "form-control", @id = "txtboxmilestonename" } })
+
+                                                        @*@Html.DropDownListFor(model => model.Client_id, new SelectList(ViewBag.ClientlistItems as List<HrProperty.Models.Client_Property>, "Client_id", "Client_name"), "Select Client", new { @Class = "selct2 form-control font-weight-bold" })*@
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="inputProjectLeader">MileStone Start Date</label>
+                                                        @Html.EditorFor(model => model.Start_Date, new { htmlAttributes = new { @placeholder = "Satrt Date", @class = "form-control", @id = "txtboxstartdate" } })
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="inputProjectLeader">MileStone End Date</label>
+                                                        @Html.EditorFor(model => model.Expected_Completed_Date, new { htmlAttributes = new { @placeholder = "End Dates", @class = "form-control", @id = "txtboxenddate" } })
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="inputProjectLeader">.</label>
+                                                        <input type="button" class="btn btn-primary form-control" value="Add MileStone" id="btnaddtogrid" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row" style="display:none" id="milestones">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">MileStones</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>MileStone</th>
+                                        <th>Start Date</th>
+                                        <th>Expected End Date</th>
+                                        @*<th>Actions</th>*@
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+
+                            </table>
+
+                        
+                    </div>
+
+
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+
+
+        </div>
+
+    </form>
+    <div class="row">
+        <div class="col-12">
+            @*<a href="#" class="btn btn-secondary">Cancel</a>*@
+            <input type="button" value="Create MileStone" id="btnAddmilestone" class="btn btn-success float-right">
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
+
+@section Myscripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //select DropDown code initialize
+            $(".selct2").select2({
+                theme: 'bootstrap4'
+            });
+
+
+
+            //Add Project Button Event start
+
+            $("#btnaddtogrid").click(function (e) {
+                
+                $('#milestones').show();
+                var closebutton='<button type="button" class="close" style="float:left" id="deleterow" aria-label="Close">'+
+                                 '<span aria-hidden="true" styel="color:red">&times;</span>'+
+                                  '</button>'
+                var milestone = $("#txtboxmilestonename").val();
+                var startdate = $("#txtboxstartdate").val();
+                var enddate = $("#txtboxenddate").val();
+                var markup = "<tr><td>" + milestone + "</td><td>" + startdate + "</td><td>" + enddate + "</td>";//<td>"+closebutton+"</td></tr>";
+                if (milestone == "") {
+                    alert("Enter milestone");
+                    return;
+                }
+                else if (startdate == "") {
+                    alert("Enter start date ");
+                    return;
+                }
+                else if (enddate == "") {
+                    alert("Enter end date");
+                    return;
+                }
+                else {
+
+                    $("#example1 tbody").append(markup);
+                    var milestone = $("#txtboxmilestonename").val("");
+                    var startdate = $("#txtboxstartdate").val("");
+                    var enddate = $("#txtboxenddate").val("");
+                }
+                //$("#example1").dataTable();
+            });
+
+            $(".date-picker").datepicker({
+                format: "yyyy-mm-dd"
+            })
+            //add milestone button event
+            $("#btnAddmilestone").click(function (e) {
+                console.log($('#Project_ID').val());
+
+                e.preventDefault();
+                var table = $("#example1 tbody");
+
+                var milestonearray = [];
+                var milestonedetails = {
+                };
+                table.find('tr').each(function (i) {
+                    var $tds = $(this).find('td'),
+                        milestone = $tds.eq(0).text(),
+                        startdate = $tds.eq(1).text(),
+                        enddate = $tds.eq(2).text();
+                    //console.log(i);
+                    //console.log(milestone);
+                    //console.log(startdate);
+                    //console.log(enddate);
+                    // do something with productId, product, Quantity
+
+                    milestonedetails.Project_ID = $('#Project_ID').val();
+                    milestonedetails.MileStoneName = milestone;
+                    milestonedetails.Start_Date = startdate;
+                    milestonedetails.Expected_Completed_Date = enddate;
+
+                    //console.log(milestonedetails);
+
+                    milestonearray.push(Object.assign({}, milestonedetails));
+                    //console.log(milestonearray);
+
+
+                    
+
+
+
+                });
+                console.log(JSON.stringify('TimeLine_Property', milestonearray));
+
+
+
+                
+                        $.ajax({
+                            type: "POST",
+                            url: "/Project/AddTimeLineDetails",
+                            data: JSON.stringify(milestonearray),// $(form).serialize(),
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            //contentType: false,
+                            //processData: false,
+                            //cache: false,
+                            success: function (res) {
+                                console.log(res);
+                                if (res.success) {
+                                    Command: toastr["success"]("", "Added Successfuly")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                    window.location.href = "/Project/AddTask"
+                                }
+                                else if (res.success == false && res.msg == 'Failed') {
+                                        Command: toastr["error"]("Invalid ", " Failed")
+
+                                    toastr.options = {
+                                        "closeButton": false,
+                                        "debug": false,
+                                        "newestOnTop": false,
+                                        "progressBar": true,
+                                        "positionClass": "toast-top-center",
+                                        "preventDuplicates": false,
+                                        "onclick": null,
+                                        "showDuration": "300",
+                                        "hideDuration": "1000",
+                                        "timeOut": "5000",
+                                        "extendedTimeOut": "1000",
+                                        "showEasing": "swing",
+                                        "hideEasing": "linear",
+                                        "showMethod": "fadeIn",
+                                        "hideMethod": "fadeOut"
+                                    }
+                                }
+                            },
+                            failure: function (res) {
+                                console.log(res);
+                            },
+                            err: function (res) {
+                                console.log(res);
+                            }
+
+                        })
+                  
+
+               
+
+
+
+            });
+
+        });
+      
+        
+
+       
+
+    </script>
+
+}

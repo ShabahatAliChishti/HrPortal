@@ -1,0 +1,409 @@
+﻿@model HrProperty.Models.Client_Property
+@{
+    ViewBag.Title = "AddClilent";
+}
+
+
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Client Form</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Client</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+@{
+    if (ViewBag.Client != null)
+    {
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+                    <div class="col-md-12">
+                        <!-- general form elements disabled -->
+                        <div>
+                            <div class="card-header">
+
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form role="form" id="formClientAdd">
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Client Name</label>
+                                                @Html.EditorFor(model => model.Client_name, new { htmlAttributes = new { @placeholder = "Client Name", @class = "form-control", @id = "txtboxclientname" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_name, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Client No</label>
+                                                @Html.EditorFor(model => model.Client_no, new { htmlAttributes = new { @placeholder = "Client No", @class = "form-control", @id = "txtboxclientno" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_no, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Client Mobile No</label>
+                                                @Html.EditorFor(model => model.Client_mobile_no, new { htmlAttributes = new { @placeholder = "Client Mobile No", @class = "form-control", @id = "txtboxclientmob" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_mobile_no, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Client Address</label>
+                                                @Html.TextAreaFor(model => model.Clientaddress, new { @placeholder = "Client Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Clientaddress, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        @Html.HiddenFor(model => model.Client_id, new { id = "natureOfVisitField" })
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label></label>
+                                                <input type="button" class="form-control btn btn-primary" id="btnAddClient" value="Add Client">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+    }
+    else
+    {
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+                    <div class="col-md-12">
+                        <!-- general form elements disabled -->
+                        <div>
+                            <div class="card-header">
+
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form role="form" id="formClientAdd">
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Client Name</label>
+                                                @Html.EditorFor(model => model.Client_name, new { htmlAttributes = new { @placeholder = "Client Name", @class = "form-control", @id = "txtboxclientname" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_name, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Client No</label>
+                                                @Html.EditorFor(model => model.Client_no, new { htmlAttributes = new { @placeholder = "Client No", @class = "form-control", @id = "txtboxclientno" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_no, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Client Mobile No</label>
+                                                @Html.EditorFor(model => model.Client_mobile_no, new { htmlAttributes = new { @placeholder = "Client Mobile No", @class = "form-control", @id = "txtboxclientmob" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Client_mobile_no, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Client Address</label>
+                                                @Html.TextAreaFor(model => model.Clientaddress, new { @placeholder = "Client Address", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Clientaddress, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        @*@Html.HiddenFor(model => model.Client_id, new { id = "natureOfVisitField",value=0})*@
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label></label>
+                                                <input type="button" class="form-control btn btn-primary" id="btnAddClient" value="Add Client">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+    }
+}
+
+
+
+
+@*<aside class="control-sidebar control-sidebar-dark">
+         Control sidebar content goes here
+    </aside>*@
+
+@section MyScripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "/Department/getDepartments",
+                success: function (data) {
+                    bindCustomersInDataTable(data);
+                }
+            });
+
+            //show popup
+            $("#btnadddepartment").click(function () {
+                //$.post("/Customer/AddCustomer", function (data) {
+                //    $("#modal-default").html(data);
+                //});
+
+                $("#modelbody").load("/Department/AddDepartment", function (e) {
+                    $("#modal-default").modal("show");
+
+
+                });
+
+            })
+
+            //add customer button event
+            $("#btnAddClient").click(function (e) {
+                console.log("here");
+                e.preventDefault();
+                var form = $("#formClientAdd");
+
+                $.validator.unobtrusive.parse(form);
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Client/AddClient",
+                        data: $(form).serialize(),
+                        success: function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                Command: toastr["success"]("", "Added Successfuly")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                                window.location.href = "/Client/ViewClient"
+                            }
+                            else if (res.success == false && res.msg == 'Failed') {
+                                    Command: toastr["error"]("Invalid ", " Failed")
+
+                                toastr.options = {
+                                    "closeButton": false,
+                                    "debug": false,
+                                    "newestOnTop": false,
+                                    "progressBar": true,
+                                    "positionClass": "toast-top-center",
+                                    "preventDuplicates": false,
+                                    "onclick": null,
+                                    "showDuration": "300",
+                                    "hideDuration": "1000",
+                                    "timeOut": "5000",
+                                    "extendedTimeOut": "1000",
+                                    "showEasing": "swing",
+                                    "hideEasing": "linear",
+                                    "showMethod": "fadeIn",
+                                    "hideMethod": "fadeOut"
+                                }
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+
+                    })
+                }
+                else {
+                    return false;
+                }
+
+            });
+
+            function bindCustomersInDataTable(data) {
+                var status = "Blocked".toString();
+                var table = $('#example1').DataTable({
+                    data: JSON.parse(data.Department),
+                    columns: [
+                        { data: 'Department_Name' },
+                        { data: 'Status' },
+                        { data: 'DateCreated' },//or { data: 'MONTH', title: 'Month' }`
+
+                        {
+                            //"data": function (data, type, dataToSet) {
+
+                            //    if (data.Is_Active) {
+
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash"></i></a>'
+                            //    }
+                            //    else {
+                            //        return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + data.ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + data.ID + ')"><i class="fa fa-trash-o">&#xf014;</i></a>'
+
+                            //    }
+
+                              //  return data.Status + "<br/>" + data.Name;
+                            "data": "ID",
+                            "render": function (ID, type, full, meta) {
+
+                                return '<a href="#" class="btn btn-info" onclick="ShowCustomer(' + ID + ')"><i class="fa fa-eye"></i></a> <a href="#" class="btn btn-danger" onclick="ConfirmDelete(' + ID + ')"><i class="fa fa-trash"></i></a>'
+
+                        },
+                            "orderable": true,
+                            "searchable": true,
+
+
+                        }
+                    ]
+                });
+
+            }
+
+
+        });
+
+        function ShowCustomer(CustomerID) {
+
+            var url = "/Customer/ShowCustomer?Id=" + CustomerID;
+
+            $("#modelbody").load(url, function (e) {
+                var id = $('#Customer_Id').val();
+                if (id > 0) {
+                    $('#btnaddnewcustomer').html("update ");
+                }
+                $("#modal-default").modal("show");
+            });
+        }
+
+        function ConfirmDelete(CustomerID){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Block!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type:'GET',
+                        url: '/Customer/DeleteCustomer?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Blocked',
+                                    'success'
+                                    )
+                                window.location.href = "/Client/ViewClient"
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+    </script>
+}
+
+
+
+
+
+

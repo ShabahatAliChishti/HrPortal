@@ -1,0 +1,50 @@
+D:\Umer\HrPortal\Project\DAL\bin\Release\DAL.dll.config
+D:\Umer\HrPortal\Project\DAL\bin\Release\DAL.dll
+D:\Umer\HrPortal\Project\DAL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\Project\DAL\bin\Release\EntityFramework.dll
+D:\Umer\HrPortal\Project\DAL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\Project\DAL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\Project\DAL\bin\Release\EntityFramework.xml
+D:\Umer\HrPortal\Project\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\Project\DAL\obj\Release\DAL.dll
+D:\Umer\HrPortal\Project\DAL\obj\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\DAL.dll.config
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\bin\Release\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\Project\DAL\obj\Release\DAL.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\DAL.dll.config
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\DAL.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\DAL.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\EntityFramework.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\HrProperty.dll
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\HrProperty.pdb
+E:\Talha\Main Projects\HrPortal\DAL\bin\Release\EntityFramework.xml
+E:\Talha\Main Projects\HrPortal\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+E:\Talha\Main Projects\HrPortal\DAL\obj\Release\DAL.dll
+E:\Talha\Main Projects\HrPortal\DAL\obj\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\DAL.dll.config
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\DAL.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\EntityFramework.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\HrProperty.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\HrProperty.pdb
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\bin\Release\EntityFramework.xml
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Release\DAL.dll
+D:\Umer\HrPortal\HRPortalSystem\HrPortal\DAL\obj\Release\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\DAL.dll.config
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\DAL.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\EntityFramework.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\HrProperty.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\HrProperty.pdb
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\bin\Release\EntityFramework.xml
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Release\DAL.dll
+C:\Users\Shumyl.khan\Desktop\HrPortal\DAL\obj\Release\DAL.pdb

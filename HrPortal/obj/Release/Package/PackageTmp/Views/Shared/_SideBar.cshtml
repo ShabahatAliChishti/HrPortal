@@ -1,0 +1,552 @@
+﻿
+
+@{ 
+    if (Session["RoleID"] != null && Session["RoleID"].ToString() == "1")
+    {
+
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+     <a href="/Dashboard/Dashboard" class="brand-link">
+        <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">HR PORTAL</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+            <div class="info">
+                <a href="#" class="d-block"></a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            HR Module
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Employee
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Employee/AddEmployee" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Employee</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Employee/ViewEmployee" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Employee</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i>
+                                <p>
+                                    Employee Type
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                    <a href="/Department/AddDepartment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Department</p>
+                    </a>
+                </li>*@
+                                <li class="nav-item">
+                                    <a href="/EmployeeType/ViewEmployeeType" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View EmployeeType</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square"></i>
+                                <p>
+                                    Designation
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                    <a href="/Department/AddDepartment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Department</p>
+                    </a>
+                </li>*@
+                                <li class="nav-item">
+                                    <a href="/Designation/DesignationView" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Designation</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Payroll Module
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        
+                        
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-money-bill"></i>
+                                <p>
+                                    Payroll
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Payroll/AddHolidays" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Holidays</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Payroll/Calculate" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Calculate Payroll</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Attendance Management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-file"></i>
+                                <p>
+                                    Attendance
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                    <a href="/Department/AddDepartment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Department</p>
+                    </a>
+                </li>*@
+                                <li class="nav-item">
+                                    <a href="/Attendance/ImportAttendance" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import Attendance</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Leave Management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-file"></i>
+                                <p>
+                                    Leave Setting
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                             
+                                <li class="nav-item">
+                                    <a href="/Leave/ViewEmployeeLeaves" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Leaves</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Admin Module
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-user"></i>
+                                <p>
+                                    Client
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Client/AddClient" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Client</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Client/ViewClient" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Client</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i>
+                                <p>
+                                    Department
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                    <a href="/Department/AddDepartment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Department</p>
+                    </a>
+                </li>*@
+                                <li class="nav-item">
+                                    <a href="/Department/ViewDepartment" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Department</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i>
+                                <p>
+                                    Deputation
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                    <a href="/Department/AddDepartment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add Department</p>
+                    </a>
+                </li>*@
+                                <li class="nav-item">
+                                    <a href="/Deputation/ViewDeputation" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Deputation</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-r-project"></i>
+                                <p>
+                                    User Management
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="/User/AddUser" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add User</p>
+                                    </a>
+                                </li>
+                                @*<li class="nav-item">
+                    <a href="/User/ViewUser" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View User</p>
+                    </a>
+                </li>*@
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Project Managemnt
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-r-project"></i>
+                                <p>
+                                    Project
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="/Project/AddProject" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Project</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Project/AddTimeLine" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Project MileStone</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Project/AddTask" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Task For Employee</p>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href="/Project/ViewProject" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Projects</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/ProjectType/AddProjectType" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Project Type</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/ProjectType/ViewAllProjectType" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Project Type</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+
+    }
+    else if (Session["RoleID"] != null && Session["RoleID"].ToString() == "2")
+    {
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/Dashboard/Dashboard" class="brand-link">
+                <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">HR PORTAL</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+                    <div class="info">
+                        <a href="#" class="d-block"></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                             with font-awesome or any other icon font library -->
+
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Project
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/project/AssignedProjects" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Assigned Projects </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/project/CompletedProjects" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Completed Projects</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Employee Management
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Employee/ShowEmployeeInfo/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Info</p>
+                                    </a>
+                                </li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Attendance Management
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Employee/ShowAttendance/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Attendance</p>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Leave Management
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Leave/ApplyforLeave/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Apply For Leave</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Leave/ViewLeaves/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Leave</p>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+    }
+
+}

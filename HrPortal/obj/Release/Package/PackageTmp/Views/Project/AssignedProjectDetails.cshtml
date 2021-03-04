@@ -1,0 +1,335 @@
+﻿@model HrProperty.Models.Project_Property
+
+
+@{
+    ViewBag.Title = "AssignedProjectDetails";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Task Details</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Task Details</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-12">
+                <!-- general form elements disabled -->
+                <div>
+                    <div class="card-header">
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form id="employeeform">
+
+
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Project Name</label>
+                                        @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @placeholder = "Project Name", @class = "form-control", @id = "txtrojectname" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Allocated Time</label>
+                                        @Html.EditorFor(model => model.Allocated_time, new { htmlAttributes = new { @placeholder = "Project Name", @class = "form-control", @id = "txtrojectname" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Allocated_time, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Project Description</label>
+                                        @Html.TextAreaFor(model => model.Task_Description, new { @placeholder = "Project Description", @class = "form-control", @id = "txtboxclientaddress", rows = "3" })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Task_Description, "", new { @class = "text-danger" })
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="row">
+                                @Html.HiddenFor(model => model.Project_Id, new { id = "txtboxprojectid" })
+                                @Html.HiddenFor(model => model.Resource_Id, new { id = "txtboxresourceid" })
+
+                                @if (ViewBag.starttime == true)
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="button" id="btnstart" class="form-control btn btn-primary" value="start Task">
+                                        </div>
+                                    </div>
+
+                                }
+                                else
+                                {
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="button" data-toggle="modal" data-target="#modal-default" id="btnend" class="form-control btn btn-primary" value="End Task">
+                                        </div>
+                                    </div>
+                                }
+
+                                
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+
+
+<div class="modal fade" id="modal-default" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">End Task Status</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelbody">
+                <div class="card-body">
+                    <form role="form" id="formadddemptype">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Task Status</label>
+                                    @Html.DropDownList("StudentGender",new List<SelectListItem>
+                        {
+                        new SelectListItem() {Text = "In Progress", Value="0"},
+                        new SelectListItem() {Text = "Completed", Value="1"}
+                        },
+new { @Class = "form-control font-weight-bold" })
+                                    @*<input type="text"  class="form-control" placeholder="@ViewBag.CustomerCode" disabled>*@
+                                </div>
+
+
+                            </div>
+                         
+                    
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button"  id="btnaddnewemptype" class="btn btn-primary">End Task</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+
+@section MyScripts {
+    <script type="text/javascript">
+
+        $("#btnstart").click(function () {
+            var projid = $("#txtboxprojectid").val();
+            Starttask(projid);
+        });
+        $("#btnaddnewemptype").click(function () {
+            var projid = $("#txtboxprojectid").val();
+            EndTask(projid);
+        });
+        function Starttask(CustomerID) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Start!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Project/StartTime?id=' + CustomerID,
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Satrted',
+                                    'success'
+                                    )
+                                location.reload(true);
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failed',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+
+        function EndTask(CustomerID) {
+            var completed = false;
+            var taskstatus=$('#StudentGender :selected').text();
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+            if ($("#StudentGender").val() == 1) {
+                completed = true;
+            }
+            else {
+                completed = false;
+            }
+            swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, End!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Project/EndTime',
+                        data: {
+                            projectid: CustomerID,
+                            IsCompleted: completed,
+                            status: taskstatus,
+                            TaskCompleted: completed
+                        },
+                        dataType: 'JSON',
+                        success: function (res) {
+                            if (res.success) {
+                                swalWithBootstrapButtons.fire(
+                                    'Done!',
+                                    'Ended',
+                                    'success'
+                                    )
+                                window.location.href = "/project/AssignedProjects";
+                            }
+                            else {
+                                swalWithBootstrapButtons.fire(
+                                    'Error!',
+                                    'Failes',
+                                    'success'
+                                    )
+                            }
+                        },
+                        failure: function (res) {
+                            console.log(res);
+                        },
+                        err: function (res) {
+                            console.log(res);
+                        }
+                    })
+
+
+
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelled',
+                      '',
+                      'error'
+                    )
+                }
+            })
+
+        }
+
+
+
+        //$("#modelbody").load("/EmployeeType/AddEmployeeType", function (e) {
+        //    $("#modal-default").modal("show");
+
+
+        //});
+    </script>
+}
